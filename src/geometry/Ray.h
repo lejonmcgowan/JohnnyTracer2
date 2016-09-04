@@ -4,7 +4,7 @@
 
 #ifndef JOHNNYRENDERER2_RAY_H_H
 #define JOHNNYRENDERER2_RAY_H_H
-#include "UnitUtils.h"
+#include "Utils/UnitUtils.h"
 class Ray
 {
     Point origin;

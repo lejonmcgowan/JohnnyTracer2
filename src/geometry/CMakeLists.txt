@@ -1,1 +1,1 @@
-add_library(geometry BBox.h BBox.cpp Ray.h Transform.cpp Transform.h HitData.h UnitUtils.h)
+add_library(geometry BBox.h BBox.cpp Ray.h Transform.cpp Transform.h HitData.h ../utils/UnitUtils.h)

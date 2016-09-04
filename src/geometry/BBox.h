@@ -4,7 +4,7 @@
 
 #ifndef JOHNNYRENDERER2_BBOX_H
 #define JOHNNYRENDERER2_BBOX_H
-#include "UnitUtils.h"
+#include "Utils/UnitUtils.h"
 
 class BBox
 {

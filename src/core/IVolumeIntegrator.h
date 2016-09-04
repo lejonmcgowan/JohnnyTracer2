@@ -1,0 +1,15 @@
+//
+// Created by lejonmcgowan on 9/4/16.
+//
+
+#ifndef JOHNNYRENDERER2_IVOLUMEINTEGRATOR_H
+#define JOHNNYRENDERER2_IVOLUMEINTEGRATOR_H
+
+
+class IVolumeIntegrator
+{
+
+};
+
+
+#endif //JOHNNYRENDERER2_IVOLUMEINTEGRATOR_H

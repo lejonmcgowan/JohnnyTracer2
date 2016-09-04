@@ -4,9 +4,9 @@
 
 #ifndef JOHNNYRENDERER2_SCENE_H
 #define JOHNNYRENDERER2_SCENE_H
-#include "Iprimitive.h"
-#include "ILight.h"
-#include "IVolumeRegion.h"
+#include "geometry/Iprimitive.h"
+#include "core/ILight.h"
+#include "core/IVolumeRegion.h"
 class Scene
 {
 private:

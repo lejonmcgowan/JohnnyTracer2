@@ -1,3 +1,2 @@
-add_library(core IRenderer.h SceneContext.h IParser.h nothing.cpp IPrimitive.cpp Iprimitive.h Scene.h ILight.h
-        IVolumeRegion.h IVolumeRegion.cpp)
+add_library(core IVolumeRegion.h IVolumeRegion.cpp IShape.cpp IShape.h IAggregate.cpp IAggregate.h ICamera.cpp ICamera.h ISampler.cpp ISampler.h IFilter.cpp IFilter.h IFilm.cpp IFilm.h IMaterial.cpp IMaterial.h ITexture.cpp ITexture.h ILight.cpp IRenderer.cpp ISurfaceIntegrator.cpp ISurfaceIntegrator.h IVolumeIntegrator.cpp IVolumeIntegrator.h)
 target_link_libraries(core geometry light)
