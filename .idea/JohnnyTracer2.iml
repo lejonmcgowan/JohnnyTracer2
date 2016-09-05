@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IPrimitive.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/nothing.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/SceneContext.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Iprimitive.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IRenderer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeRegion.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IParser.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/ILight.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Scene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeRegion.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/HitData.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/Transform.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/Ray.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/UnitUtils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/BBox.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/Transform.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/geometry/BBox.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/AreaLight.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/AreaLight.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/CMakeLists.txt" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Release/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Debug/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/RelWithDebInfo/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/MinSizeRel/src" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Release/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Debug/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/RelWithDebInfo/src" />
+          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/MinSizeRel/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
