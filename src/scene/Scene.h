@@ -19,7 +19,17 @@ public:
     {
         bounds = aggregate->getBounds();
     }
+    /**
+     * shoot a ray into the scene and determine the nearest object in the scene that it intersects with, if any
+     * @param ray the ray to shoot into the scene
+     * @return a pointer containing data based on the scene contiditions and nearest intersection
+     */
     std::shared_ptr<HitData> queryIntersect(const Ray ray);
+    /**
+     * a less computationally expensive shot into the scene that determines if the ray collides with any object
+     * @param ray the ray to shoot into the scene
+     * @return a bool representing whether or not an object was hit.
+     */
     bool checkIntersect(const Ray ray);
 
 };

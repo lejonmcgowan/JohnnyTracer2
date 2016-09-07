@@ -1,0 +1,8 @@
+//
+// Created by lejonmcgowan on 9/6/16.
+//
+
+#ifndef JOHNNYRENDERER2_NULLCORE_H
+#define JOHNNYRENDERER2_NULLCORE_H
+
+#endif //JOHNNYRENDERER2_NULLCORE_H

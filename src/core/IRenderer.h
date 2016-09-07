@@ -4,8 +4,26 @@
 
 #ifndef JOHNNYRENDERER2_RENDERER_H
 #define JOHNNYRENDERER2_RENDERER_H
-class Renderer
-{
 
+#include <memory>
+#include "scene/Scene.h"
+#include "samplers/Sample.h"
+
+class IRenderer
+{
+public:
+    virtual void render(const std::shared_ptr<Scene> scene) = 0;
+
+    /**
+     * calculate the incident radiance along the ray
+     */
+    virtual Color calcIncidentRadiance(const std::shared_ptr<Scene> scene, const Ray& ray, const
+    std::shared_ptr<Sample> sample) const = 0;
+
+    /**
+     * calculate the amount of light that passes into scene (for volumetric scattering)
+     */
+    virtual Color transmit(const std::shared_ptr<Scene> scene, const Ray& ray, const
+    std::shared_ptr<Sample> sample) const = 0;
 };
 #endif //JOHNNYRENDERER2_RENDERER_H

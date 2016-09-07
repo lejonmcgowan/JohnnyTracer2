@@ -2,30 +2,35 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/samplers/Sample.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/samplers/CameraSample.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/samplers/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/AreaLight.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/AreaLight.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Light/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/scene/IParser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/scene/Scene.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/scene/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/scene/SceneContext.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/utils/UnitUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/utils/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IFilm.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/core/IShape.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ICamera.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/core/IMaterial.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ITexture.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IAggregate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IRenderer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ISampler.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeRegion.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeIntegrator.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeRegion.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeRegion.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ISampler.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ISurfaceIntegrator.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IMaterial.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IMaterial.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IShape.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ITexture.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeIntegrator.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/IShape.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IFilter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ISurfaceIntegrator.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IRenderer.cpp" isTestSource="false" />
@@ -37,6 +42,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/core/ILight.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/ICamera.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/IVolumeIntegrator.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/geometry/HitData.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/geometry/Transform.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/geometry/CMakeLists.txt" isTestSource="false" />
@@ -52,23 +58,23 @@
       <library name="Header Search Paths">
         <CLASSES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/local/include" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/Release/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/Debug/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/RelWithDebInfo/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/MinSizeRel/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Release/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Debug/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/RelWithDebInfo/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/MinSizeRel/src" />
         </CLASSES>
         <SOURCES>
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/local/include" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/Release/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/Debug/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/RelWithDebInfo/src" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/JohnnyTracer2-4d1a6543/4d1a6543/MinSizeRel/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Release/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/Debug/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/RelWithDebInfo/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/JohnnyTracer2-534915e5/534915e5/MinSizeRel/src" />
         </SOURCES>
       </library>
     </orderEntry>
