@@ -1,0 +1,1 @@
+add_library(fileparser IParser.cpp IParser.h povray/POVParser.cpp povray/POVParser.h)
