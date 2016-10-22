@@ -6,9 +6,12 @@
 #define JOHNNYRENDERER2_POVPARSER_H
 
 
-class POVParser: public IParser
-{
+#include "SceneFileParser.h"
 
+class POVParser: public SceneFileParser
+{
+public:
+    virtual std::vector<SceneElem> getElems(std::istream& stream) override;
 };
 
 

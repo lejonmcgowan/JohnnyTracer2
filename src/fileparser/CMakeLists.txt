@@ -1,1 +1,1 @@
-add_library(fileparser IParser.cpp IParser.h povray/POVParser.cpp povray/POVParser.h)
+add_library(fileparser SceneCreator.cpp SceneCreator.h POVParser.cpp POVParser.h SceneFileParser.cpp SceneFileParser.h)

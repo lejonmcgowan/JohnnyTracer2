@@ -6,8 +6,8 @@
 #define JOHNNYRENDERER2_IPRIMITIVE_H
 #include <memory>
 #include <vector>
-#include <light/AreaLight.h>
 
+#include "light/AreaLight.h"
 #include "geometry/Ray.h"
 #include "geometry/BBox.h"
 #include "geometry/HitData.h"
