@@ -9,6 +9,16 @@
 
 struct SceneElemMod
 {
+    union ModData
+    {
+        double dbl;
+        double vec2[2];
+        double vec3[3];
+        double vec4[4];
+        int integer;
+        char letters[30];
+    };
+    ModData data;
     std::string name;
     SceneElemMod(std::string name): name(name){}
 };

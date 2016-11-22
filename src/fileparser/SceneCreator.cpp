@@ -6,7 +6,7 @@
 #include "SceneCreator.h"
 #include "POVParser.h"
 
-SceneFileParser& SceneCreator::getParser(std::string fileName)
+SceneFileParser &SceneCreator::getParser(std::string fileName)
 {
     static POVParser povParser;
     return povParser;
@@ -22,6 +22,25 @@ SceneCreator SceneCreator::addToScene(std::string fileName)
 
 SceneCreator SceneCreator::addToScene(SceneElem elemData)
 {
+    switch (elemData.elemType)
+    {
+        case SceneElem::SPHERE:
+            break;
+        case SceneElem::TRIANGLE:
+            break;
+        case SceneElem::BOX:
+            break;
+        case SceneElem::DIR_LIGHT:
+            break;
+        case SceneElem::POINT_LIGHT:
+            break;
+        case SceneElem::SPOT_LIGHT:
+            break;
+        case SceneElem::PIN_CAMERA:
+            break;
+        case SceneElem::PLANE:
+            break;
+    }
     return *this;
 }
 

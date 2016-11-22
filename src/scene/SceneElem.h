@@ -17,10 +17,10 @@ struct SceneElem
         TRIANGLE,
         BOX,
         DIR_LIGHT,
-        POINR_LIGHT,
+        POINT_LIGHT,
         SPOT_LIGHT,
         PLANE,
-        CAMERA
+        PIN_CAMERA
     };
     ElemType elemType;
     std::map<std::string, SceneElemMod> modifiers;

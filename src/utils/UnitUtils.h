@@ -6,24 +6,25 @@
 #define JOHNNYRENDERER2_POINT_H
 #include <glm/glm.hpp>
 #ifndef DOUBLE_PRECISION
-    typedef float Number;
-    typedef glm::vec2 Vec2;
-    typedef glm::vec3 Vec3;
-    typedef glm::vec4 Vec4;
-    typedef glm::mat2 Mat2;
-    typedef glm::mat3 Mat3;
-    typedef glm::mat4 Mat4;
+
+typedef float Number;
+
 #else
-    typedef double Number;
-    typedef glm::dvec2 Vec2;
-    typedef glm::dvec3 Vec3;
-    typedef glm::dvec4 Vec4;
-    typedef glm::dmat2 Mat2;
-    typedef glm::dmat3 Mat3;
-    typedef glm::dmat4 Mat4;
+typedef double Number;
 #endif
 
-    typedef Vec3 Point;
-    typedef Vec2 Point2D;
-    typedef Vec4 Color;
+typedef glm::tvec2<Number, glm::highp> Vec2;
+typedef glm::tvec3<Number, glm::highp> Vec3;
+typedef glm::tvec4<Number, glm::highp> Vec4;
+
+typedef glm::tmat2x2<Number, glm::highp> Mat2;
+typedef glm::tmat3x3<Number, glm::highp> Mat3;
+typedef glm::tmat4x4<Number, glm::highp> Mat4;
+
+typedef Vec3 Point;
+
+typedef Vec2 Point2D;
+
+typedef Vec4 Color;
+
 #endif //JOHNNYRENDERER2_POINT_H
