@@ -10,7 +10,7 @@
 #include "light/AreaLight.h"
 #include "geometry/Ray.h"
 #include "geometry/BBox.h"
-#include "geometry/HitData.h"
+#include "geometry/GeomData.h"
 class IPrimitive
 {
 private:

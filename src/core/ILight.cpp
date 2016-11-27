@@ -3,3 +3,9 @@
 //
 
 #include "ILight.h"
+
+ILight::ILight(Transform transform, int numSamples):transform(transform),
+numSamples(numSamples)
+{
+
+}

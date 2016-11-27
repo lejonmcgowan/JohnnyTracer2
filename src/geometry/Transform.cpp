@@ -93,3 +93,14 @@ void Transform::scaleTo(Vec3 scaling)
     trans *= mat4_cast(r);
     scaleBy(scaling);
 }
+
+bool Transform::isLeftHanded()
+{
+
+    return determinant(Mat3(trans)) < 0;
+}
+
+Mat4 Transform::getTransMatrix()
+{
+    return trans;
+}

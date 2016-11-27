@@ -24,7 +24,7 @@ public:
      * @param ray the ray to shoot into the scene
      * @return a pointer containing data based on the scene contiditions and nearest intersection
      */
-    std::shared_ptr<HitData> queryIntersect(const Ray ray);
+    std::shared_ptr<GeomData> queryIntersect(const Ray ray);
     /**
      * a less computationally expensive shot into the scene that determines if the ray collides with any object
      * @param ray the ray to shoot into the scene

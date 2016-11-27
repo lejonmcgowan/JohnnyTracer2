@@ -1,1 +1,1 @@
-add_library(light AreaLight.cpp AreaLight.h)
+add_library(light AreaLight.cpp AreaLight.h PointLight.cpp PointLight.h)

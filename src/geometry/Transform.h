@@ -25,6 +25,10 @@ public:
 
     void scaleBy(Vec3 scale);
     void scaleTo(Vec3 scale);
+
+    bool isLeftHanded();
+
+    Mat4 getTransMatrix();
 };
 
 
