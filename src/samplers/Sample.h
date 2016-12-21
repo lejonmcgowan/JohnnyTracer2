@@ -6,10 +6,46 @@
 #define JOHNNYRENDERER2_SAMPLE_H
 
 
+#include <ISampler.h>
+#include <ISurfaceIntegrator.h>
+#include <IVolumeIntegrator.h>
 #include "CameraSample.h"
+#include <vector>
 
-class Sample: public CameraSample
+
+class Sample : public CameraSample
 {
+public:
+    Sample(std::shared_ptr<ISampler> sampler, std::shared_ptr<ISurfaceIntegrator> surInt,
+           std::shared_ptr<IVolumeIntegrator> volInt,
+           std::shared_ptr<Scene> scene)
+    {
+
+    }
+
+    unsigned long add1D(uint32_t num)
+    {
+        buffer1D.push_back(num);
+        return buffer1D.size() - 1;
+    }
+
+    unsigned long add2D(uint32_t num)
+    {
+        buffer2D.push_back(num);
+        return buffer2D.size() - 1;
+    }
+
+    Sample *duplicate(int count) const
+    {
+
+    }
+private:
+    std::vector<uint> buffer1D, buffer2D;
+    void AllocateSampleMemory()
+    {
+
+    }
 
 };
+
 #endif //JOHNNYRENDERER2_SAMPLE_H

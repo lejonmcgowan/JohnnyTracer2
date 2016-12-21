@@ -5,6 +5,11 @@
 #ifndef JOHNNYRENDERER2_POINT_H
 #define JOHNNYRENDERER2_POINT_H
 #include <glm/glm.hpp>
+
+typedef glm::ivec2 IVec2;
+typedef glm::ivec3 IVec3;
+typedef glm::ivec4 IVec4;
+
 #ifndef DOUBLE_PRECISION
 
 typedef float Number;
