@@ -6,7 +6,7 @@
 #include "SceneCreator.h"
 #include "POVParser.h"
 
-SceneFileParser &SceneCreator::getParser(std::string fileName)
+SceneFileParser& SceneCreator::getParser(std::string fileName)
 {
     static POVParser povParser;
     return povParser;
@@ -44,21 +44,28 @@ SceneCreator SceneCreator::addToScene(SceneElem elemData)
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(ICamera camera)
+SceneCreator SceneCreator::addToScene(ICamera& camera)
 {
-    cameras.push_back(std::make_shared<ICamera>(camera));
+    std::shared_ptr<ICamera> cameraPtr;
+    cameraPtr.reset(&camera);
+    cameras.push_back(cameraPtr);
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(IShape shape)
+SceneCreator SceneCreator::addToScene(IShape& shape)
 {
-    shapes.push_back(std::make_shared<IShape>(shape));
+    std::shared_ptr<IShape> shapePtr;
+    shapePtr.reset(&shape);
+
+    shapes.push_back(shapePtr);
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(ILight light)
+SceneCreator SceneCreator::addToScene(ILight& light)
 {
-    lights.push_back(std::make_shared<ILight>(light));
+    std::shared_ptr<ILight> lightPtr;
+    lightPtr.reset(&light);
+    lights.push_back(lightPtr);
     return *this;
 }
 

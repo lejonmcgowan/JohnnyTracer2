@@ -20,9 +20,7 @@ protected:
 public:
     IPrimitive(): id(++idIter){}
     virtual BBox getBounds() const = 0;
-    virtual bool canIntersect();
-    virtual std::shared_ptr<HitData> queryIntersect(const Ray ray);
-    virtual bool checkIntersect(const Ray ray);
+
     /**
      * something to do with ensuring that every geometry in the prinmitive is intersectable. don't fully get it atm
      */

@@ -9,7 +9,7 @@
 #include <utils/UnitUtils.h>
 #include <Transform.h>
 
-class Box
+class Box: public IShape
 {
 private:
     Vec3 min,max;

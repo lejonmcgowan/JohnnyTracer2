@@ -2,10 +2,11 @@
 // Created by lejonmcgowan on 8/2/16.
 //
 
-#ifndef JOHNNYRENDERER2_HITDATA_H
-#define JOHNNYRENDERER2_HITDATA_H
+#ifndef JOHNNYRENDERER2_GEOMDATA_H
+#define JOHNNYRENDERER2_GEOMDATA_H
 
-#include <IShape.h>
+
+class IShape;
 
 struct GeomData
 {
@@ -21,4 +22,4 @@ struct GeomData
     Partials partialNormals;
     std::shared_ptr<IShape> shape;
 };
-#endif //JOHNNYRENDERER2_HITDATA_H
+#endif //JOHNNYRENDERER2_GEOMDATA_H

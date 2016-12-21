@@ -16,6 +16,6 @@ foreach(src_library ${src_libraries})
     add_subdirectory(${src_library})
 endforeach()
 
-add_executable(${PROJECT_NAME} main.cpp samplers/CameraSample.h samplers/Sample.h)
+add_executable(${PROJECT_NAME} main.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${src_libraries})

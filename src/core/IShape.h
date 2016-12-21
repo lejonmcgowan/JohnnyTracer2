@@ -9,7 +9,7 @@
 #include <geometry/Transform.h>
 #include <geometry/BBox.h>
 #include <geometry/Ray.h>
-#include <bits/shared_ptr.h>
+#include <memory>
 #include <geometry/GeomData.h>
 
 class IShape {

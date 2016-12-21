@@ -6,9 +6,13 @@
 #define JOHNNYRENDERER2_IFILM_H
 
 
+#include <utils/UnitUtils.h>
 class IFilm
 {
-
+protected:
+    Vec2 res;
+public:
+    IFilm(Vec2 resXY);
 };
 
 

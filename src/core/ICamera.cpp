@@ -4,9 +4,8 @@
 
 #include "ICamera.h"
 
-ICamera::ICamera(Transform transform, Vec2 shutterRange, IFilm film):
+ICamera::ICamera(Transform transform, IFilm film):
 transform(transform),
-shutterRange(shutterRange),
 film(film)
 {
 

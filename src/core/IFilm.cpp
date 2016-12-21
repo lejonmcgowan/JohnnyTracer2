@@ -3,3 +3,7 @@
 //
 
 #include "IFilm.h"
+IFilm::IFilm(Vec2 resXY): res(resXY)
+{
+
+}

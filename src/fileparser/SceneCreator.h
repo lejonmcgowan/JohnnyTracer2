@@ -27,11 +27,11 @@ public:
 
     SceneCreator addToScene(std::vector<SceneElem> elemData);
 
-    SceneCreator addToScene(ICamera camera);
+    SceneCreator addToScene(ICamera& camera);
 
-    SceneCreator addToScene(IShape shape);
+    SceneCreator addToScene(IShape& shape);
 
-    SceneCreator addToScene(ILight light);
+    SceneCreator addToScene(ILight& light);
 
     Scene build();
 };

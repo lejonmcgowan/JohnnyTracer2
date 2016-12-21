@@ -33,8 +33,8 @@ BBox BBox::operator*(Mat4 trans)
     Vec3 newMin, newMax;
     Vec4 tempNewMin = trans * Vec4(min,0.0);
     Vec4 tempNewMax = trans * Vec4(max,0.0);
-    newMin << tempNewMin[0],tempNewMin[1],tempNewMin[2];
-    newMax << tempNewMax[0],tempNewMax[1],tempNewMax[2];
+    newMin = Vec3(tempNewMin[0],tempNewMin[1],tempNewMin[2]);
+    newMax = Vec3(tempNewMax[0],tempNewMax[1],tempNewMax[2]);
 
     return BBox(newMin,newMax);
 }

@@ -13,11 +13,10 @@
 class ICamera
 {
 protected:
-    Vec2 shutterRange;
     IFilm film;
     Transform transform;
 public:
-    ICamera(Transform transform, Vec2 shutterRange, IFilm film);
+    ICamera(Transform transform, IFilm film);
 };
 
 
