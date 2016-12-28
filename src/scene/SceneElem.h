@@ -7,22 +7,19 @@
 
 #include <map>
 #include <string>
+#include <memory>
 #include "SceneElemMod.h"
 
 struct SceneElem
 {
-    enum ElemType
+    std::string name;
+    SceneElem(std::string name): name(name){}
+    bool hasChildren(){return !modifiers.empty();}
+    void addModifier(std::string name, SceneElemMod mod)
     {
-        SPHERE,
-        TRIANGLE,
-        BOX,
-        DIR_LIGHT,
-        POINT_LIGHT,
-        SPOT_LIGHT,
-        PLANE,
-        PIN_CAMERA
-    };
-    ElemType elemType;
+        modifiers.emplace(name,mod);
+    }
+private:
     std::map<std::string, SceneElemMod> modifiers;
 };
 #endif //JOHNNYRENDERER2_SCENEELEM_H

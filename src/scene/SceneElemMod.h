@@ -6,9 +6,12 @@
 #define JOHNNYRENDERER2_SCENEELEMMOD_H
 
 #include <string>
+#include <map>
 
 struct SceneElemMod
 {
+    std::string name;
+    SceneElemMod(const std::string& name): name(name){}
     union ModData
     {
         double dbl;
@@ -18,8 +21,25 @@ struct SceneElemMod
         int integer;
         char letters[30];
     };
+    void setData(ModData data)
+    {
+        this->data = data;
+        hasData = true;
+    }
+    void unsetData()
+    {
+        hasData = false;
+    }
+    bool containsData(){return hasData;}
+    bool hasChildren(){return !modifiers.empty();}
+    void addModifier(std::string name, SceneElemMod mod)
+    {
+        modifiers.emplace(name,mod);
+    }
+private:
+    std::map<std::string, SceneElemMod> modifiers;
     ModData data;
-    std::string name;
-    SceneElemMod(std::string name): name(name){}
+    bool hasData;
+
 };
 #endif //JOHNNYRENDERER2_SCENEELEMMOD_H

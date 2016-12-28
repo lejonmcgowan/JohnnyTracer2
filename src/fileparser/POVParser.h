@@ -10,8 +10,9 @@
 
 class POVParser: public SceneFileParser
 {
-public:
-    virtual std::vector<SceneElem> getElems(std::istream& stream) override;
+protected:
+    void parseTokens(std::vector<std::string> tokens);
+    virtual std::vector<std::string> tokenize(std::istream& stream);
 };
 
 

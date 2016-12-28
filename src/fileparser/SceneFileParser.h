@@ -8,13 +8,20 @@
 
 #include <vector>
 #include <istream>
+#include <string>
 #include "scene/SceneElem.h"
 
 class SceneFileParser
 {
+protected:
+    std::vector<SceneElem> objects;
+    virtual void parseTokens(std::vector<std::string> tokens) = 0;
+    virtual std::vector<std::string> tokenize(std::istream& stream) = 0;
+
 public:
-    virtual std::vector<SceneElem> getElems(std::istream& stream) = 0;
+    std::vector<SceneElem> getElems(std::istream& stream) final;
 };
+
 
 
 #endif //JOHNNYRENDERER2_SCENEFILEPARSER_H

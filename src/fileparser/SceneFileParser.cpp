@@ -3,3 +3,11 @@
 //
 
 #include "SceneFileParser.h"
+std::vector<SceneElem> SceneFileParser::getElems(std::istream& stream)
+{
+    objects.clear();
+
+    parseTokens(tokenize(stream));
+
+    return objects;
+}
