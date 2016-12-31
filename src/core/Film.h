@@ -7,12 +7,16 @@
 
 
 #include <utils/UnitUtils.h>
-class IFilm
+#include <bits/unique_ptr.h>
+#include "IFilter.h"
+class Film
 {
 protected:
     Vec2 res;
+    std::unique_ptr<IFilter> filter;
+    std::string filename;
 public:
-    IFilm(Vec2 resXY);
+    Film(Vec2 resolution, IFilter& filter, std::string filename);
 };
 
 

@@ -104,3 +104,7 @@ Mat4 Transform::getTransMatrix()
 {
     return trans;
 }
+Mat4 Transform::getInverseMatrix()
+{
+    return invTrans;
+}

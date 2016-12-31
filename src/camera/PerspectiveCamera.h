@@ -10,10 +10,10 @@
 class PerspectiveCamera: public ProjectionCamera
 {
 public:
-    PerspectiveCamera(const Transform& transform,
-                      const IFilm& film,
-                      const Transform& projection,
-                      const Vec4& screenWindow);
+    PerspectiveCamera(Transform transform,
+                      const Film& film,
+                      Transform projection,
+                      Vec4 screenWindow);
 
 };
 

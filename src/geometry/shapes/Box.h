@@ -7,13 +7,15 @@
 
 
 #include <utils/UnitUtils.h>
-#include <Transform.h>
 
 class Box: public IShape
 {
 private:
     Vec3 min,max;
 public:
+    BBox getObjectBounds() override;
+    Number surfaceArea() const override;
+    bool intersect(const Ray& ray, HitPacket& results) override;
     Box(Vec3 min,Vec3 max, Transform transform = Transform());
 };
 

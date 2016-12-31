@@ -1,1 +1,7 @@
-add_library(fileparser SceneCreator.cpp SceneCreator.h POVParser.cpp POVParser.h SceneFileParser.cpp SceneFileParser.h)
+add_library(fileparser
+        POVParser.cpp POVParser.h
+        SceneFileParser.cpp SceneFileParser.h
+        SceneElemParser.cpp SceneElemParser.h
+        POVElemParser.cpp POVElemParser.h)
+
+target_link_libraries(fileparser core utils)

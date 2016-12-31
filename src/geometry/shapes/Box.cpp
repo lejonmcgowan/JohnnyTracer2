@@ -11,3 +11,15 @@ Box::Box(Vec3 min, Vec3 max, Transform transform): IShape(transform),
 {
 
 }
+BBox Box::getObjectBounds()
+{
+    return BBox();
+}
+Number Box::surfaceArea() const
+{
+    return 0;
+}
+bool Box::intersect(const Ray& ray, IShape::HitPacket& results)
+{
+    return false;
+}

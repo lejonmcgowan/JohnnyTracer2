@@ -4,7 +4,7 @@
 
 #include "ICamera.h"
 
-ICamera::ICamera(Transform transform, IFilm film):
+ICamera::ICamera(Transform transform, const Film& film):
 transform(transform),
 film(film)
 {

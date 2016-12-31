@@ -10,10 +10,11 @@ BBox IShape::getWorldBounds()
     return  getObjectBounds() * worldtransform;
 }
 
-bool IShape::intersectQuick(const Ray &ray)
+bool IShape::intersectQuick(const Ray &ray, bool alphaTexture)
 {
-    std::cout << "UNIMPLEMENTED INTERSECT QUICK" << std::endl;
-    return false;
+    HitPacket packet(0);
+
+    return intersect(ray,packet);
 }
 
 bool IShape::intersect(const Ray &ray, IShape::HitPacket &results)

@@ -7,6 +7,10 @@
 #include "geometry/Iprimitive.h"
 #include "core/ILight.h"
 #include "core/IVolumeRegion.h"
+
+/**
+ * the actual data structure used by the Ray tracer to generate an image.
+ */
 class Scene
 {
 private:
@@ -24,7 +28,7 @@ public:
      * @param ray the ray to shoot into the scene
      * @return a pointer containing data based on the scene contiditions and nearest intersection
      */
-    std::shared_ptr<GeomData> queryIntersect(const Ray ray);
+    std::shared_ptr<SurfaceInteraction> queryIntersect(const Ray ray);
     /**
      * a less computationally expensive shot into the scene that determines if the ray collides with any object
      * @param ray the ray to shoot into the scene

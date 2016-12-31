@@ -4,9 +4,7 @@
 
 #include "Plane.h"
 
-Plane::Plane(Point point, Vec3 normal, Transform transform) : IShape(transform),
-                                                              nor(normal),
-                                                              p(point)
+Plane::Plane(Vec3 normal, double d): nor(normal),d(d)
 {
 
 }

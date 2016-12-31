@@ -8,13 +8,13 @@
 
 #include <core/IShape.h>
 
-class Plane: public IShape
+class Plane
 {
 private:
-    Point p;
     Vec3 nor;
+    double d;
 public:
-    Plane(Point point, Vec3 normal, Transform transform = Transform());
+    Plane(Vec3 normal, double d);
 };
 
 

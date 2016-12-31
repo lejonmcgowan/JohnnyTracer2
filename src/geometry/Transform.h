@@ -8,6 +8,13 @@
 
 #include <utils/UnitUtils.h>
 
+/**
+ * basic implemtation for basic affine transforms, inluding translation, rotation, and scaling.
+ * new additions to the transformations undergo the pattern of scale -> rotate -> translate
+ * to ensure that the transformation works intuitively to the average users expectations.
+ *
+ * Transformations and its are stored as a Mat4, and are updated in tandem.
+ * */
 class Transform
 {
 private:
@@ -29,6 +36,7 @@ public:
     bool isLeftHanded();
 
     Mat4 getTransMatrix();
+    Mat4 getInverseMatrix();
 };
 
 

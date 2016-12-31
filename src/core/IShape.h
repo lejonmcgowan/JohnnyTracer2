@@ -10,22 +10,22 @@
 #include <geometry/BBox.h>
 #include <geometry/Ray.h>
 #include <memory>
-#include <geometry/GeomData.h>
+#include <geometry/SurfaceInteraction.h>
 
 class IShape {
 public:
     struct HitPacket
     {
         Number tHit;
-        Number rayEpsilon;
-        GeomData hitData;
+        SurfaceInteraction hitData;
+        bool testAlphaTexture = true;
         bool successfulHit;
-        HitPacket(Number tHit, Number rayEpsilon = 0):
-                tHit(tHit),
-                rayEpsilon(rayEpsilon){}
+        HitPacket(Number tHit):
+                tHit(tHit){}
 
     };
 protected:
+    //possible optimization: make a transform pool and draw from that via a pointer
     Transform worldtransform;
     bool leftHanded;
     BBox boundingBox;
@@ -33,8 +33,16 @@ public:
     IShape(Transform transform): worldtransform(transform),leftHanded(worldtransform.isLeftHanded()){}
     virtual BBox getObjectBounds() = 0;
     virtual BBox getWorldBounds();
-    virtual bool intersectQuick(const Ray& ray);
-    virtual bool intersect(const Ray& ray, HitPacket& results);
+    virtual Number surfaceArea() const = 0;
+    /**
+     * basic implementation of a "test hit" that uses the intersect implementation.
+     * should be overriden for a faster implementation
+     * @param ray the ray to test the intersection with
+     * @param testAlphaTexture test on a stencil to determine if certain parts of the surface is "hittable"
+     * @return whether or note the ray hit
+     */
+    virtual bool intersectQuick(const Ray& ray, bool testAlphaTexture = true);
+    virtual bool intersect(const Ray& ray, HitPacket& results) = 0;
 };
 
 

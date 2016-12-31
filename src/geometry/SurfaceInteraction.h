@@ -5,18 +5,17 @@
 #ifndef JOHNNYRENDERER2_GEOMDATA_H
 #define JOHNNYRENDERER2_GEOMDATA_H
 
+#include "Interaction.h"
 
 class IShape;
 
-struct GeomData
+struct SurfaceInteraction: public Interaction
 {
     struct Partials
     {
         Vec3 u;
         Vec3 v;
     };
-    Point hitPoint;
-    Point normal;
     Point2D uv;
     Partials partialPoints;
     Partials partialNormals;

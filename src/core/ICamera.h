@@ -8,15 +8,15 @@
 
 #include <utils/UnitUtils.h>
 #include <geometry/Transform.h>
-#include "IFilm.h"
+#include "Film.h"
 
 class ICamera
 {
 protected:
-    IFilm film;
+    const Film& film;
     Transform transform;
 public:
-    ICamera(Transform transform, IFilm film);
+    ICamera(Transform transform, const Film& film);
 };
 
 

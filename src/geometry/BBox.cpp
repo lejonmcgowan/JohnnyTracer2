@@ -2,6 +2,7 @@
 // Created by lejonmcgowan on 8/1/16.
 //
 
+#include <algorithm>
 #include "BBox.h"
 void BBox::setMin(const glm::vec3& min)
 {
@@ -42,4 +43,33 @@ BBox BBox::operator*(Mat4 trans)
 BBox BBox::operator*(Transform trans)
 {
     return operator*(trans.getTransMatrix());
+}
+/**
+ * as if we are intersecting with 3 pairs of axis-aligned planes, taking into account
+ * the boxes limitations
+ * @param ray the ray to test intersection with
+ * @return whether or not the ray intersects the bounding box
+ */
+bool BBox::inersectQuick(const Ray& ray)
+{
+    Number t0 = 0, t1 = ULONG_MAX;
+    for(int i = 0; i < 3; i++)
+    {
+        Number invRayDir = 1 / ray.direction[i];
+        Number near = (min[i] - ray.origin[i]) * invRayDir;
+        Number far = (max[i] - ray.origin[i]) * invRayDir;
+        #ifdef DOUBLE_PRECISION
+            //offset floating point error
+            far *= 1 + 2 * gamma(3);
+        #endif
+        if(near > far)
+            std::swap(near,far);
+
+        t0 = near > t0 ? near : t0;
+        t1 = far < t1 ? far : t1;
+
+        if(t0 < t1)
+            return false;
+    }
+    return true;
 }

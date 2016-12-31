@@ -5,7 +5,7 @@
 #include "ProjectionCamera.h"
 ProjectionCamera::ProjectionCamera(
                                    const Transform& transform,
-                                   const IFilm& film,
+                                   const Film& film,
                                    const Transform& projection,
                                    Vec4 screenWindow)
     : ICamera(transform,film)

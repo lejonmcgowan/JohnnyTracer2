@@ -3,3 +3,7 @@
 //
 
 #include "IFilter.h"
+IFilter::IFilter(const Vec2 radius): radius(radius)
+{
+
+}

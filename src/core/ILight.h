@@ -9,9 +9,11 @@
 
 class ILight
 {
+public:
+    const int numSamples;
 protected:
     Transform transform;
-    int numSamples;
+
 public:
     ILight(Transform transform, int numSamples = 1);
 };

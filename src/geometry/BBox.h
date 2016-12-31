@@ -6,6 +6,7 @@
 #define JOHNNYRENDERER2_BBOX_H
 #include "utils/UnitUtils.h"
 #include "Transform.h"
+#include "Ray.h"
 
 class BBox
 {
@@ -19,6 +20,8 @@ public:
     void setMax(const glm::vec3& max);
     Vec3 getMin() const;
     Vec3 getMax() const;
+
+    bool inersectQuick(const Ray& ray);
 
     /**
      * other useful utility functions. Ex. get the 8 points of the box,compute box volume, etc.

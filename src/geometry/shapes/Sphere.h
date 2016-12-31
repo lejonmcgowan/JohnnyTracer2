@@ -14,6 +14,9 @@ private:
     Number radius;
 public:
     Sphere(Number radius, Transform transform = Transform());
+    BBox getObjectBounds() override;
+    Number surfaceArea() const override;
+    bool intersect(const Ray& ray, HitPacket& results) override;
 
 };
 

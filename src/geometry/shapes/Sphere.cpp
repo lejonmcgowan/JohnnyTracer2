@@ -9,3 +9,15 @@ Sphere::Sphere(Number radius, Transform transform): IShape(transform),
 {
 
 }
+BBox Sphere::getObjectBounds()
+{
+    return BBox();
+}
+Number Sphere::surfaceArea() const
+{
+    return 0;
+}
+bool Sphere::intersect(const Ray& ray, IShape::HitPacket& results)
+{
+    return false;
+}

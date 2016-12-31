@@ -49,7 +49,7 @@ int main(int argc, char **argv)
         /*set the SceneContext fields from command-line arguments OR
             via config file (ini)*/
 
-        //retrieve the scene to be rendered (config with the proper integrators, renderer, options, etc
+        //retrieve the scene to be rendered (config with the proper integrators, renderer, options, etc)
 
         //render the scene
     }

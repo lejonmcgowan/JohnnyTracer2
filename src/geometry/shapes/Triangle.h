@@ -11,9 +11,14 @@
 class Triangle: public IShape
 {
 private:
-    Point abc;
 public:
-    Triangle(Vec3 points, Transform transform = Transform());
+    BBox getObjectBounds() override;
+    Number surfaceArea() const override;
+    bool intersect(const Ray& ray, HitPacket& results) override;
+private:
+    Point a,b,c;
+public:
+    Triangle(Point a,Point b, Point c, Transform transform = Transform());
 };
 
 
