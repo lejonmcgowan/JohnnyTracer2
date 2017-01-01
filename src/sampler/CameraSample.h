@@ -5,7 +5,7 @@
 #ifndef JOHNNYRENDERER2_CAMERASAMPLE_H
 #define JOHNNYRENDERER2_CAMERASAMPLE_H
 
-#include <utils/UnitUtils.h>
+#include <core/utils/UnitUtils.h>
 
 struct CameraSample
 {

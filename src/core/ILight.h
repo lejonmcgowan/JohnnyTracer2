@@ -5,7 +5,7 @@
 #ifndef JOHNNYRENDERER2_ILIGHT_H
 #define JOHNNYRENDERER2_ILIGHT_H
 
-#include <geometry/Transform.h>
+#include <core/Transform.h>
 
 class ILight
 {

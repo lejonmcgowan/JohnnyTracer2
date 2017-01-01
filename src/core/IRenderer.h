@@ -6,9 +6,14 @@
 #define JOHNNYRENDERER2_RENDERER_H
 
 #include <memory>
-#include "scene/Scene.h"
-#include "samplers/Sample.h"
 
+#include <geometry/Ray.h>
+
+#include "utils/UnitUtils.h"
+
+
+class Scene;
+class Sample;
 class IRenderer
 {
 public:

@@ -9,7 +9,7 @@
 #include <light/PointLight.h>
 #include <camera/PerspectiveCamera.h>
 #include <camera/BoxFilter.h>
-#include <utils/Constants.h>
+#include <core/utils/Constants.h>
 #include "POVElemParser.h"
 
 Transform parseTransform(SceneElem elem)
@@ -116,13 +116,15 @@ std::unique_ptr<ICamera> POVElemParser::parseCamera(SceneElem elem)
     Transform transform;
     BoxFilter basicFilter(Vec2(1, 1));
     Film basicFilm(Vec2(100, 100), basicFilter, "res/scenes/test.pov");
-
-    return Constants::make_unique<PerspectiveCamera>(transform, basicFilm, transform, Vec4());
+    std::unique_ptr<ICamera> camera = std::unique_ptr<PerspectiveCamera>
+        (new PerspectiveCamera(transform,basicFilm,transform,Vec4()));
+    return camera;
 }
 
 std::unique_ptr<ILight> POVElemParser::parseLight(SceneElem elem)
 {
-    return Constants::make_unique<PointLight>(Transform(), Color());
+    std::unique_ptr<ILight> light = std::unique_ptr<PointLight>(new PointLight(Transform(), Color()));
+    return light;
 }
 
 std::unique_ptr<IShape> POVElemParser::parseShape(SceneElem elem)

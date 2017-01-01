@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.0.2)
 project(JohnnyRenderer2)
 
-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/ext)
@@ -9,6 +13,8 @@ include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/ext)
 add_subdirectory(src)
 add_subdirectory(test)
 
-file(GLOB_RECURSE RESOURCES "res/*")
-MESSAGE(WARNING ${CMAKE_BINARY_DIR})
-file(COPY ${RESOURCES} DESTINATION ${CMAKE_BINARY_DIR}/res)
+file(GLOB_RECURSE RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} res/*)
+
+MESSAGE(INFO " Resource files: " ${RESOURCES})
+
+file(COPY ${RESOURCES} DESTINATION ${CMAKE_BINARY_DIR}/bin/res)

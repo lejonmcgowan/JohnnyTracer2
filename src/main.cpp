@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <scene/SceneCreator.h>
 
 std::string sceneFile;
 std::string outputFile;
@@ -36,7 +37,7 @@ bool processArguments(int argc, char **argv)
     //print usage and exit if at any point any of the parameters are invalid
 
     //todo nothing is ready to be rendered. make configs, fool.
-    return false;
+    return true;
 }
 
 int main(int argc, char **argv)
@@ -50,7 +51,8 @@ int main(int argc, char **argv)
             via config file (ini)*/
 
         //retrieve the scene to be rendered (config with the proper integrators, renderer, options, etc)
-
+        SceneCreator sceneCreator;
+        sceneCreator.addToScene("res/test.pov");
         //render the scene
     }
 

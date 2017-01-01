@@ -5,6 +5,7 @@
 #include <fstream>
 #include <fileparser/POVParser.h>
 #include <fileparser/POVElemParser.h>
+#include <iostream>
 #include "SceneCreator.h"
 
 std::pair<std::shared_ptr<SceneFileParser>, std::shared_ptr<SceneElemParser>>
@@ -19,9 +20,20 @@ SceneCreator::getParserAndMethod(std::string fileName)
 
 SceneCreator SceneCreator::addToScene(std::string fileName)
 {
-    std::filebuf filebuf;
-    filebuf.open(fileName, std::ios::in);
-    std::istream stream(&filebuf);
+    std::ifstream stream;
+    stream.open(fileName);
+
+    char nextChar;
+    if( stream.is_open() )
+    {
+        std::cout << "Using std::filebuf : Opened" << std::endl ;
+    }
+    else
+    {
+        std::cout << "Using std::filebuf : Not opened" << std::endl ;
+        stream.close() ;
+    }
+
     auto parsePair = getParserAndMethod(fileName);
 
     return addToScene(parsePair.first->getElems(stream), *(parsePair.second));

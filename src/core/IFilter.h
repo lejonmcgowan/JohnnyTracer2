@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_IFILTER_H
 
 
-#include <utils/UnitUtils.h>
+#include "utils/UnitUtils.h"
 class IFilter
 {
 protected:

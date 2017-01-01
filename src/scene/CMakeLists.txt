@@ -1,6 +1,6 @@
 add_library(scene SceneCreator.cpp SceneCreator.h
         Scene.h
-        ../utils/SceneContext.h
+        ../core/utils/SceneContext.h
         SceneElem.h
         SceneElemMod.h)
 

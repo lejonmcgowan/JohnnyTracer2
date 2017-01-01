@@ -5,7 +5,7 @@
 #ifndef JOHNNYRENDERER2_RAY_H_H
 #define JOHNNYRENDERER2_RAY_H_H
 
-#include "utils/UnitUtils.h"
+#include <core/utils/UnitUtils.h>
 
 //todo: keep in mind the differential directions for more fancy stuff later on
 struct Ray

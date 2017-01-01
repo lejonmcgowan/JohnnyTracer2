@@ -6,13 +6,13 @@
 #define JOHNNYRENDERER2_SAMPLE_H
 
 
-#include <ISampler.h>
-#include <ISurfaceIntegrator.h>
-#include <IVolumeIntegrator.h>
+#include <core/ISampler.h>
+#include <core/ISurfaceIntegrator.h>
+#include <core/IVolumeIntegrator.h>
 #include "CameraSample.h"
 #include <vector>
 
-
+class Scene;
 class Sample : public CameraSample
 {
 public:

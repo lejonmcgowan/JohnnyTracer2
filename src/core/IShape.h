@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_ISHAPE_H
 
 
-#include <geometry/Transform.h>
+#include <core/Transform.h>
 #include <geometry/BBox.h>
 #include <geometry/Ray.h>
 #include <memory>

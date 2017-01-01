@@ -4,4 +4,4 @@ add_library(fileparser
         SceneElemParser.cpp SceneElemParser.h
         POVElemParser.cpp POVElemParser.h)
 
-target_link_libraries(fileparser core utils)
+target_link_libraries(fileparser core geometry camera light)

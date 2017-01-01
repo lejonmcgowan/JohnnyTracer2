@@ -17,7 +17,7 @@ class POVParser: public SceneFileParser
 {
 protected:
     void parseTokens(const std::vector<std::string>& tokens);
-    virtual std::vector<std::string> tokenize(std::istream& stream);
+    virtual std::vector<std::string> tokenize(std::ifstream& stream);
 };
 
 

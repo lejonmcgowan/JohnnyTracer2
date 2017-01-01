@@ -4,8 +4,8 @@
 
 #ifndef JOHNNYRENDERER2_BBOX_H
 #define JOHNNYRENDERER2_BBOX_H
-#include "utils/UnitUtils.h"
-#include "Transform.h"
+#include <core/utils/UnitUtils.h>
+#include <core/Transform.h>
 #include "Ray.h"
 
 class BBox

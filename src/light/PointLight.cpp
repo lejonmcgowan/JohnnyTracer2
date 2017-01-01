@@ -4,8 +4,7 @@
 
 #include "PointLight.h"
 
-PointLight::PointLight(Transform transform, Color color, int numSamples):ILight(transform,numSamples),
-                                                                         color(color)
+PointLight::PointLight(Transform transform, Color color, int numSamples):ILight(transform,numSamples), color(color)
 {
 
 }

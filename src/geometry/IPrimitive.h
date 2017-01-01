@@ -7,10 +7,12 @@
 #include <memory>
 #include <vector>
 
-#include "light/AreaLight.h"
-#include "geometry/Ray.h"
-#include "geometry/BBox.h"
-#include "geometry/SurfaceInteraction.h"
+#include "Ray.h"
+#include "BBox.h"
+#include "SurfaceInteraction.h"
+
+class AreaLight;
+
 class IPrimitive
 {
 private:

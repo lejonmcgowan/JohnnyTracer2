@@ -9,6 +9,12 @@ add_library(core IVolumeRegion.h IVolumeRegion.cpp
         ITexture.cpp ITexture.h
         ILight.cpp
         IRenderer.cpp
+        Transform.h Transform.cpp
         ISurfaceIntegrator.cpp ISurfaceIntegrator.h
-        IVolumeIntegrator.cpp IVolumeIntegrator.h NullCore.h)
-target_link_libraries(core geometry light samplers)
+        IVolumeIntegrator.cpp IVolumeIntegrator.h
+        utils/Constants.h
+        utils/SceneContext.h
+        utils/UnitUtils.h)
+
+target_link_libraries(core geometry)
+

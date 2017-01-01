@@ -39,7 +39,7 @@ protected:
      * @return a vector of tokens represented by strings. This will be used by the implementation to
      * convert into SceneElems.
      */
-    virtual std::vector<std::string> tokenize(std::istream& stream) = 0;
+    virtual std::vector<std::string> tokenize(std::ifstream& stream) = 0;
 
 public:
     /**
@@ -47,7 +47,7 @@ public:
      * @param stream the stream to tokenize
      * @return objects, filled by the implementations
      */
-    virtual std::vector<SceneElem> getElems(std::istream& stream) final;
+    virtual std::vector<SceneElem> getElems(std::ifstream& stream) final;
 };
 
 

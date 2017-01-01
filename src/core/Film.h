@@ -6,8 +6,8 @@
 #define JOHNNYRENDERER2_IFILM_H
 
 
-#include <utils/UnitUtils.h>
-#include <bits/unique_ptr.h>
+#include "utils/UnitUtils.h"
+#include <memory>
 #include "IFilter.h"
 class Film
 {

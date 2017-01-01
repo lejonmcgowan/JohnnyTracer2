@@ -4,7 +4,7 @@
 
 #ifndef JOHNNYRENDERER2_SCENE_H
 #define JOHNNYRENDERER2_SCENE_H
-#include "geometry/Iprimitive.h"
+#include "geometry/IPrimitive.h"
 #include "core/ILight.h"
 #include "core/IVolumeRegion.h"
 

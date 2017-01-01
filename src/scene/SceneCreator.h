@@ -7,11 +7,14 @@
 
 
 #include <string>
+#include <memory>
+
 #include <core/ICamera.h>
 #include <core/IShape.h>
 #include <core/ILight.h>
 #include <scene/Scene.h>
 #include <fileparser/SceneElemParser.h>
+#include <fileparser/SceneFileParser.h>
 
 class SceneCreator {
 private:

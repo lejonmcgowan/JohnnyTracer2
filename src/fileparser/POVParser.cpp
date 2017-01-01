@@ -2,11 +2,12 @@
 // Created by lejonmcgowan on 10/5/16.
 //
 
+#include <core/utils/UnitUtils.h>
+
 #include <fstream>
 #include <algorithm>
-#include <assert.h>
 #include <scene/SceneElemMod.h>
-#include <utils/UnitUtils.h>
+#include <iostream>
 #include "POVParser.h"
 
 const std::vector<char> specialChars = {'{', '}', '<', '>', ','};
@@ -134,7 +135,7 @@ SceneElemMod parseAndGetVector(const std::vector<std::string>& tokens, int& iter
         if (iter >= tokens.size())
             std::runtime_error("Vector Prematurely Ended (mid-vector)");
 
-        assert(tokens[iter] == "," && "Invalid Number separator");
+        assert((tokens[iter] == "," || tokens[iter] == ">") && "Invalid Number separator");
         iter++;
     }
     if (iter >= tokens.size())
@@ -451,23 +452,23 @@ void POVParser::parseTokens(const std::vector<std::string>& tokens)
     {
         std::string token = tokens[i];
         if (token == "camera")
-            i = parseAndAddCamera(tokens, i, objects);
+            i = parseAndAddCamera(tokens, ++i, objects);
         else if (token == "light_source")
-            i = parseAndAddLight(tokens, i, objects);
+            i = parseAndAddLight(tokens, ++i, objects);
         else if (token == "sphere")
-            i = parseAndAddSphere(tokens, i, objects);
+            i = parseAndAddSphere(tokens, ++i, objects);
         else if (token == "box")
-            i = parseAndAddBox(tokens, i, objects);
+            i = parseAndAddBox(tokens, ++i, objects);
         else if (token == "traingle")
-            i = parseAndAddTriangle(tokens, i, objects);
+            i = parseAndAddTriangle(tokens, ++i, objects);
         else if (token == "plane")
-            i = parseAndAddPlane(tokens, i, objects);
+            i = parseAndAddPlane(tokens, ++i, objects);
         else
             std::runtime_error("Invalid Top-Level Token: " + token);
     }
 }
 
-std::vector<std::string> POVParser::tokenize(std::istream& stream)
+std::vector<std::string> POVParser::tokenize(std::ifstream& stream)
 {
     std::vector<std::string> tokens = std::vector<std::string>();
     char nextChar;
@@ -476,7 +477,8 @@ std::vector<std::string> POVParser::tokenize(std::istream& stream)
         //check for potential keyword
         if (isalpha(nextChar))
         {
-            std::string word = "" + nextChar;
+            std::string word;
+            word += nextChar;
             const std::string& parsedWord = parseWord(word, stream);
             if (std::find(keywords.begin(), keywords.end(), parsedWord) != keywords.end());
             {
@@ -487,13 +489,15 @@ std::vector<std::string> POVParser::tokenize(std::istream& stream)
             //check for numbers
         else if (isdigit(nextChar) || nextChar == '-' || nextChar == '.')
         {
-            std::string wordNum = "" + nextChar;
+            std::string wordNum;
+            wordNum += nextChar;
             tokens.push_back(parseNum(wordNum, stream));
         }
             //check for operator characters, like for vectors or scope
         else if (std::find(specialChars.begin(), specialChars.end(), nextChar) != specialChars.end())
         {
-            std::string charString = "" + nextChar;
+            std::string charString;
+            charString += nextChar;
             tokens.push_back(charString);
         }
             //check for comments
