@@ -10,6 +10,12 @@
 #include <iostream>
 #include "POVParser.h"
 
+void errorAndExit(std::string what, int exitCode = 1)
+{
+    std::cout << what << std::endl;
+    assert(false);
+}
+
 const std::vector<char> specialChars = {'{', '}', '<', '>', ','};
 
 const std::vector<std::string> keywords =
@@ -20,6 +26,7 @@ const std::vector<std::string> keywords =
         "rotate",
         "scale",
         "box",
+        "plane",
         "sphere",
         "triangle",
         "pigment",
@@ -71,7 +78,7 @@ const std::vector<std::string> finishModTokens =
 std::string parseWord(std::string word, std::istream& stream)
 {
     char nextChar;
-    while (stream.get(nextChar) && isalpha(nextChar))
+    while (stream.get(nextChar) && (isalpha(nextChar) || nextChar == '_'))
         word += nextChar;
 
     if (!(stream.rdstate() & std::ifstream::eofbit))
@@ -82,11 +89,29 @@ std::string parseWord(std::string word, std::istream& stream)
 
 std::string parseNum(std::string wordNum, std::istream& stream)
 {
-    int decsLeft = 1;
+    int decsLeft = 0;
+    //for exponents
+    int eLeft = 0;
     char nextChar;
 
-    while (stream.get(nextChar) && (isdigit(nextChar) || (nextChar == '.' && decsLeft > 0)))
+    while (stream.get(nextChar) &&
+            (isdigit(nextChar)
+            || nextChar == '.'
+            || nextChar == 'e')
+            || nextChar == '-')
+    {
         wordNum += nextChar;
+        if(nextChar == '.')
+            decsLeft++;
+        else if(nextChar == 'e')
+            eLeft++;
+        else if(nextChar == '-' && eLeft < 1)
+            errorAndExit("invalid negative number");
+    }
+    if(eLeft > 1)
+        errorAndExit("Too many e's");
+    if(decsLeft > 1)
+        errorAndExit("too many negatives");
 
     if (!(stream.rdstate() & std::ifstream::eofbit))
         stream.putback(nextChar);
@@ -122,7 +147,7 @@ void parseMultiCommentFromStream(std::istream& stream)
     }
 }
 
-SceneElemMod parseAndGetVector(const std::vector<std::string>& tokens, int& iter, std::string modName)
+SceneElemMod getVectorMod(const std::vector<std::string>& tokens, int& iter, std::string modName)
 {
     assert(tokens[iter] == "<" && "Invalid Vector block");
     iter++;
@@ -133,13 +158,15 @@ SceneElemMod parseAndGetVector(const std::vector<std::string>& tokens, int& iter
         nums.push_back(num);
         iter++;
         if (iter >= tokens.size())
-            std::runtime_error("Vector Prematurely Ended (mid-vector)");
+            errorAndExit("Vector Prematurely Ended (mid-vector)");
 
         assert((tokens[iter] == "," || tokens[iter] == ">") && "Invalid Number separator");
-        iter++;
+
+        if(tokens[iter] != ">")
+            iter++;
     }
     if (iter >= tokens.size())
-        std::runtime_error("Vector Prematurely Ended");
+        errorAndExit("Vector Prematurely Ended");
     //increment past end token
     iter++;
     SceneElemMod mod(modName);
@@ -160,35 +187,34 @@ SceneElemMod parseAndGetVector(const std::vector<std::string>& tokens, int& iter
             data.dbl = nums[0];
             break;
         case 0:
-            std::runtime_error("Empty Vector");
+            errorAndExit("Empty Vector");
             break;
         default:
-            std::runtime_error("unsupported vector size: " + nums.size());
+            errorAndExit("unsupported vector size: " + nums.size());
     }
     mod.setData(data);
     return mod;
 }
-int parseAndAddVectorMod(const std::vector<std::string>& tokens, int iter, SceneElemMod& elem, std::string modName)
+int addVectorToElem(const std::vector<std::string>& tokens, int iter, SceneElemMod& elem, std::string modName)
 {
-    SceneElemMod vectorMod = parseAndGetVector(tokens, iter, modName);
-    elem.addModifier(modName, vectorMod);
+    SceneElemMod vectorMod = getVectorMod(tokens, iter, modName);
+    elem.setModifier(modName, vectorMod);
 
     return iter;
 
 }
-int parseAndAddVectorMod(const std::vector<std::string>& tokens, int iter, SceneElem& elem, std::string modName)
+int addVectorToElem(const std::vector<std::string>& tokens, int iter, SceneElem& elem, std::string modName)
 {
-    SceneElemMod vectorMod = parseAndGetVector(tokens, iter, modName);
-    elem.addModifier(modName, vectorMod);
+    SceneElemMod vectorMod = getVectorMod(tokens, iter, modName);
+    elem.setModifier(modName, vectorMod);
 
     return iter;
 
 }
 
-int parseAndAddPigmentMod(const std::vector<std::string>& tokens, int iter, SceneElem& elem)
+int addPigmentMod(const std::vector<std::string>& tokens, int iter, SceneElem& elem)
 {
     SceneElemMod pigmentMod("pigment");
-    elem.addModifier("pigment", pigmentMod);
 
     assert(tokens[iter] == "{" && "Invalid Pigment block begin");
     iter++;
@@ -197,25 +223,26 @@ int parseAndAddPigmentMod(const std::vector<std::string>& tokens, int iter, Scen
     iter++;
 
     SceneElemMod colorMod("color");
-    pigmentMod.addModifier("color", colorMod);
 
     std::string colorType = tokens[iter];
     assert((colorType == "rgb" || colorType == "rgbf") && "Invalid Color Type");
     iter++;
 
-    iter = parseAndAddVectorMod(tokens, iter, colorMod, colorType);
+    iter = addVectorToElem(tokens, iter, colorMod, colorType);
 
     assert(tokens[iter] == "}" && "Invalid Pigment block end");
     iter++;
+
+    pigmentMod.setModifier("color", colorMod);
+    elem.setModifier("pigment", pigmentMod);
 
     return iter;
 
 }
 
-int parseAndAddFinishMod(const std::vector<std::string>& tokens, int iter, SceneElem& elem)
+int addFinishMod(const std::vector<std::string>& tokens, int iter, SceneElem& elem)
 {
     SceneElemMod finishMod("finish");
-    elem.addModifier("finish", finishMod);
 
     assert(tokens[iter] == "{" && "Invalid Finish block begin");
     iter++;
@@ -225,24 +252,28 @@ int parseAndAddFinishMod(const std::vector<std::string>& tokens, int iter, Scene
         std::string token = tokens[iter];
         iter++;
         if (std::find(finishModTokens.begin(), finishModTokens.end(), token) == finishModTokens.end())
-            std::runtime_error("Invalid finish mod token: " + token);
+            errorAndExit("Invalid finish mod token: " + token);
 
         SceneElemMod finishSubMod(token);
         SceneElemMod::ModData data;
         data.dbl = atof(tokens[iter].c_str());
-        finishMod.addModifier(finishSubMod.name, finishSubMod);
+        iter++;
+        finishSubMod.setData(data);
+        finishMod.setModifier(finishSubMod.name, finishSubMod);
     }
     if (iter >= tokens.size())
-        std::runtime_error("Finish prematurely Ended");
+        errorAndExit("Finish prematurely Ended");
 
     assert(tokens[iter] == "}" && "Invalid Finish block end");
     iter++;
+
+    elem.setModifier("finish", finishMod);
 
     return iter;
 
 }
 
-int parseAndAddCamera(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+int addCameraElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
     assert(tokens[iter] == "{" && "Invalid Camera Block Start");
     iter++;
@@ -253,9 +284,9 @@ int parseAndAddCamera(const std::vector<std::string>& tokens, int iter, std::vec
         iter++;
         if (std::find(cameraModTokens.begin(), cameraModTokens.end(), token) == cameraModTokens.end())
         {
-            std::runtime_error("Invalid camera token: " + token);
+            errorAndExit("Invalid camera token: " + token);
         }
-        iter = parseAndAddVectorMod(tokens, iter, cameraElem, token);
+        iter = addVectorToElem(tokens, iter, cameraElem, token);
 
     }
     assert(tokens[iter] == "}" && "Invalid Camera Block End");
@@ -266,27 +297,29 @@ int parseAndAddCamera(const std::vector<std::string>& tokens, int iter, std::vec
     return iter;
 }
 
-int parseAndAddLight(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+int addLightElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
     assert(tokens[iter] == "{" && "Invalid Light Block Start");
     iter++;
 
     SceneElem lightElem("light_source", SceneElem::LIGHT);
-    iter = parseAndAddVectorMod(tokens, iter, lightElem, "location");
+    iter = addVectorToElem(tokens, iter, lightElem, "location");
 
     assert(tokens[iter] == "color" && "Invalid Light Block Color");
     iter++;
 
     SceneElemMod colorMod("color");
-    lightElem.addModifier("color", colorMod);
+
 
     assert(tokens[iter] == "rgb" && "Invalid Light Block RGB");
     iter++;
 
-    iter = parseAndAddVectorMod(tokens, iter, colorMod, "rgb");
+    iter = addVectorToElem(tokens, iter, colorMod, "rgb");
 
     assert(tokens[iter] == "}" && "Invalid Light Block End");
     iter++;
+
+    lightElem.setModifier("color", colorMod);
 
     objects.push_back(lightElem);
 
@@ -300,12 +333,17 @@ void parseAndAddShapeMods(const std::vector<std::string>& tokens, int iter, Scen
     while (iter != tokens.size() && tokens[iter] != "}")
     {
         std::string token = tokens[iter];
-        if (std::find(shapeModTokens.begin(), shapeModTokens.end(), token) != shapeModTokens.end())
+        if (std::find(shapeModTokens.begin(), shapeModTokens.end(), token) == shapeModTokens.end())
             iter++;
         else if (token == "translate")
         {
             iter++;
-            iter = parseAndAddVectorMod(tokens, iter, elem, "translate");
+            iter = addVectorToElem(tokens, iter, elem, "translate");
+        }
+        else if (token == "scale")
+        {
+            iter++;
+            iter = addVectorToElem(tokens, iter, elem, "scale");
         }
         else if (token == "rotate")
         {
@@ -315,12 +353,12 @@ void parseAndAddShapeMods(const std::vector<std::string>& tokens, int iter, Scen
             {
                 std::array<Number,3> oldRotData;
                 const SceneElemMod::ModData& oldModData = elem.getMod("rotate").getData();
-                std::copy(std::begin(oldModData.vec3), std::begin(oldModData.vec3), oldRotData.begin());
-                iter = parseAndAddVectorMod(tokens, iter, elem, "rotate");
+                std::copy(std::begin(oldModData.vec3), std::end(oldModData.vec3), oldRotData.begin());
+                iter = addVectorToElem(tokens, iter, elem, "rotate");
 
                 std::array<Number,3> newRotData;
                 const SceneElemMod::ModData& newModData = elem.getMod("rotate").getData();
-                std::copy(std::begin(newModData.vec3), std::begin(newModData.vec3), newRotData.begin());
+                std::copy(std::begin(newModData.vec3), std::end(newModData.vec3), newRotData.begin());
                 newRotData[0] += oldRotData[0];
                 newRotData[1] += oldRotData[1];
                 newRotData[2] += oldRotData[2];
@@ -331,115 +369,146 @@ void parseAndAddShapeMods(const std::vector<std::string>& tokens, int iter, Scen
             }
             else
             {
-                iter = parseAndAddVectorMod(tokens, iter, elem, "rotate");
+                iter = addVectorToElem(tokens, iter, elem, "rotate");
             }
         }
         else if (token == "pigment")
         {
             iter++;
-            iter = parseAndAddPigmentMod(tokens, iter, elem);
+            iter = addPigmentMod(tokens, iter, elem);
         }
         else if (token == "finish")
         {
             iter++;
-            iter = parseAndAddFinishMod(tokens, iter, elem);
+            iter = addFinishMod(tokens, iter, elem);
         }
     }
-    if (tokens.size() >= iter)
+    if (iter >= tokens.size())
     {
-        std::runtime_error("Pov block not properly ended");
+        errorAndExit("Pov block not properly ended");
     }
 }
 
-int parseAndAddSphere(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+/**
+ * used to find the end of a POV block
+ * @param iter the initial iter to search through
+ * @param tokens tokens to scan
+ * @return the index AFTER the closing bracket that ends the bloock
+ */
+int exhaustBlock(int iter, const std::vector<std::string>& tokens, int initStack = 1)
+{
+    //todo need a stack-like system to properly find the end of the shape blocks
+    int bracketStack = initStack;
+    while (iter < tokens.size() && bracketStack > 0)
+    {
+        if (tokens[iter] == "{")
+            bracketStack++;
+        else if (tokens[iter] == "}")
+            bracketStack--;
+
+        iter++;
+    }
+
+    if (iter > tokens.size() || bracketStack > 0)
+        errorAndExit("Premature end in block");
+
+    return iter;
+}
+int addSphereElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
     SceneElem sphereElem("sphere", SceneElem::SHAPE);
     parseAndAddShapeMods(tokens, iter, sphereElem);
-    iter = parseAndAddVectorMod(tokens, iter, sphereElem, "center");
+
+    assert(tokens[iter] == "{" && "Invalid Sphere block begin");
+    iter++;
+
+    iter = addVectorToElem(tokens, iter, sphereElem, "center");
     assert(tokens[iter] == "," && "invalid parse for Sphere");
+    iter++;
+
     SceneElemMod radElem("radius");
     SceneElemMod::ModData radData;
     radData.dbl = atof(tokens[iter].c_str());
     iter++;
     radElem.setData(radData);
-    sphereElem.addModifier("radius", radElem);
-    while (iter < tokens.size() && tokens[iter] != "}")
-        iter++;
+    sphereElem.setModifier("radius", radElem);
 
-    if (iter >= tokens.size())
-        std::runtime_error("Premature end in sphere block");
-    //take out final block token
-    iter++;
+    iter = exhaustBlock(iter,tokens);
 
     objects.push_back(sphereElem);
 
     return iter;
 }
 
-int parseAndAddBox(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+int addBoxElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
+
     SceneElem boxElem("box", SceneElem::SHAPE);
     parseAndAddShapeMods(tokens, iter, boxElem);
-    iter = parseAndAddVectorMod(tokens, iter, boxElem, "min");
-    assert(tokens[iter] == "," && "invalid parse for Box min");
-    iter = parseAndAddVectorMod(tokens, iter, boxElem, "max");
-    //set iter to the ending bracket
-    while (iter < tokens.size() && tokens[iter] != "}")
-        iter++;
 
-    if (iter >= tokens.size())
-        std::runtime_error("Premature end in Box block");
-
-    //take out final block token
+    assert(tokens[iter] == "{" && "Invalid Box block begin");
     iter++;
+
+    iter = addVectorToElem(tokens, iter, boxElem, "min");
+
+    assert(tokens[iter] == "," && "invalid parse for Box min");
+    iter++;
+
+    iter = addVectorToElem(tokens, iter, boxElem, "max");
+
+    iter = exhaustBlock(iter,tokens);
 
     objects.push_back(boxElem);
     return iter;
 }
 
-int parseAndAddTriangle(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+int addTriangleElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
+
     SceneElem triangleElem("triangle", SceneElem::SHAPE);
     parseAndAddShapeMods(tokens, iter, triangleElem);
-    iter = parseAndAddVectorMod(tokens, iter, triangleElem, "a");
-    assert(tokens[iter] == "," && "invalid parse for Triangle 'a'");
-    iter = parseAndAddVectorMod(tokens, iter, triangleElem, "b");
-    assert(tokens[iter] == "," && "invalid parse for Triangle 'b'");
-    iter = parseAndAddVectorMod(tokens, iter, triangleElem, "c");
-    //set iter to the ending bracket
-    while (iter < tokens.size() && tokens[iter] != "}")
-        iter++;
 
-    if (iter >= tokens.size())
-        std::runtime_error("Premature end in Box block");
-
-    //take out final block token
+    assert(tokens[iter] == "{" && "Invalid Triangle block begin");
     iter++;
+
+    iter = addVectorToElem(tokens, iter, triangleElem, "a");
+    assert(tokens[iter] == "," && "invalid parse for Triangle 'a'");
+    iter++;
+
+    iter = addVectorToElem(tokens, iter, triangleElem, "b");
+    assert(tokens[iter] == "," && "invalid parse for Triangle 'b'");
+    iter++;
+
+    iter = addVectorToElem(tokens, iter, triangleElem, "c");
+
+    iter = exhaustBlock(iter,tokens);
 
     objects.push_back(triangleElem);
 
     return iter;
 }
 
-int parseAndAddPlane(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
+int addPlaneElem(const std::vector<std::string>& tokens, int iter, std::vector<SceneElem>& objects)
 {
+
     SceneElem planeElem("plane", SceneElem::CUSTOM);
     parseAndAddShapeMods(tokens, iter, planeElem);
-    iter = parseAndAddVectorMod(tokens, iter, planeElem, "normal");
+
+    assert(tokens[iter] == "{" && "Invalid Plane block begin");
+    iter++;
+
+    iter = addVectorToElem(tokens, iter, planeElem, "normal");
     assert(tokens[iter] == "," && "invalid parse for Sphere");
+    iter++;
+
     SceneElemMod pointPlaneMod("d");
     SceneElemMod::ModData pointData;
     pointData.dbl = atof(tokens[iter].c_str());
     iter++;
     pointPlaneMod.setData(pointData);
-    planeElem.addModifier("d", pointPlaneMod);
-    while (iter < tokens.size() && tokens[iter] != "}")
-        iter++;
+    planeElem.setModifier("d", pointPlaneMod);
 
-    if (iter >= tokens.size())
-        std::runtime_error("Premature end in sphere block");
-    //take out final block token
-    iter++;
+    iter = exhaustBlock(iter,tokens);
 
     objects.push_back(planeElem);
     return iter;
@@ -452,19 +521,19 @@ void POVParser::parseTokens(const std::vector<std::string>& tokens)
     {
         std::string token = tokens[i];
         if (token == "camera")
-            i = parseAndAddCamera(tokens, ++i, objects);
+            i = addCameraElem(tokens, ++i, objects);
         else if (token == "light_source")
-            i = parseAndAddLight(tokens, ++i, objects);
+            i = addLightElem(tokens, ++i, objects);
         else if (token == "sphere")
-            i = parseAndAddSphere(tokens, ++i, objects);
+            i = addSphereElem(tokens, ++i, objects);
         else if (token == "box")
-            i = parseAndAddBox(tokens, ++i, objects);
-        else if (token == "traingle")
-            i = parseAndAddTriangle(tokens, ++i, objects);
+            i = addBoxElem(tokens, ++i, objects);
+        else if (token == "triangle")
+            i = addTriangleElem(tokens, ++i, objects);
         else if (token == "plane")
-            i = parseAndAddPlane(tokens, ++i, objects);
+            i = addPlaneElem(tokens, ++i, objects);
         else
-            std::runtime_error("Invalid Top-Level Token: " + token);
+            errorAndExit("Invalid Top-Level Token: " + token);
     }
 }
 
@@ -472,6 +541,7 @@ std::vector<std::string> POVParser::tokenize(std::ifstream& stream)
 {
     std::vector<std::string> tokens = std::vector<std::string>();
     char nextChar;
+    long size = 0;
     while (stream.get(nextChar))
     {
         //check for potential keyword
@@ -480,20 +550,22 @@ std::vector<std::string> POVParser::tokenize(std::ifstream& stream)
             std::string word;
             word += nextChar;
             const std::string& parsedWord = parseWord(word, stream);
-            if (std::find(keywords.begin(), keywords.end(), parsedWord) != keywords.end());
+            if (std::find(keywords.begin(), keywords.end(), parsedWord) == keywords.end())
             {
-                std::runtime_error("Invalid keyword: " + parsedWord);
+                errorAndExit("Invalid keyword: " + parsedWord);
             }
             tokens.push_back(parsedWord);
         }
-            //check for numbers
+
+        //check for numbers
         else if (isdigit(nextChar) || nextChar == '-' || nextChar == '.')
         {
             std::string wordNum;
             wordNum += nextChar;
             tokens.push_back(parseNum(wordNum, stream));
         }
-            //check for operator characters, like for vectors or scope
+
+        //check for operator characters, like for vectors or scope
         else if (std::find(specialChars.begin(), specialChars.end(), nextChar) != specialChars.end())
         {
             std::string charString;
@@ -519,7 +591,7 @@ std::vector<std::string> POVParser::tokenize(std::ifstream& stream)
                 std::string errorMessage;
                 errorMessage += "characters '/";
                 errorMessage + nextChar + "' not recognized";
-                std::runtime_error(errorMessage.c_str());
+                errorAndExit(errorMessage);
             }
         }
             //make sure that whiteSpace is ignored before throwing error
@@ -529,9 +601,13 @@ std::vector<std::string> POVParser::tokenize(std::ifstream& stream)
             errorMessage += "Invalid character: '";
             errorMessage += nextChar;
             errorMessage += "'";
-            std::runtime_error(errorMessage.c_str());
+            errorAndExit(errorMessage);
         }
-
+//        if(size < tokens.size())
+//        {
+//            size = tokens.size();
+//            std::cout << tokens.back() << std::endl;
+//        }
     }
 
     return tokens;

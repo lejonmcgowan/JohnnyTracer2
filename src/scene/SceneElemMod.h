@@ -42,16 +42,20 @@ public:
 
     bool containsData(){return hasData;}
     bool hasChildren(){return !modifiers.empty();}
-    void addModifier(std::string name, SceneElemMod mod)
+    void setModifier(std::string name, SceneElemMod mod)
     {
+        modifiers.erase(name);
         modifiers.emplace(name,mod);
     }
 
     SceneElemMod getMod(std::string name)
     {
         if(!hasMod(name))
+        {
             std::runtime_error("Mod " + name + " does not exsist. Please check using hasMod() before trying to access"
                 " scene elem");
+            exit(2);
+        }
 
         return modifiers.at(name);
     }
@@ -66,7 +70,7 @@ private:
     ModData data;
 
 private:
-    bool hasData;
+    bool hasData = false;
 
 };
 #endif //JOHNNYRENDERER2_SCENEELEMMOD_H

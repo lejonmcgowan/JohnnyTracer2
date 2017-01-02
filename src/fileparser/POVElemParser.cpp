@@ -77,72 +77,70 @@ Vec3 getVec3(SceneElemMod elem, std::string name)
     return vec;
 }
 
-Sphere parseSphere(SceneElem elem)
+std::shared_ptr<IShape> parseSphere(SceneElem elem)
 {
     Transform transform = parseTransform(elem);
     Vec3 center = getVec3(elem, "center");
 
     transform.translateBy(center);
-    return Sphere((Number) elem.getMod("radius").getData().dbl, transform);
+    return std::shared_ptr<Sphere>(new Sphere((Number) elem.getMod("radius").getData().dbl, transform));
 }
 
-Box parseBox(SceneElem elem)
+std::shared_ptr<IShape> parseBox(SceneElem elem)
 {
     Transform transform = parseTransform(elem);
     Vec3 boxMin = getVec3(elem, "min");
     Vec3 boxMax = getVec3(elem, "max");
 
-    return Box(boxMin, boxMax, transform);
+    return std::shared_ptr<Box>(new Box(boxMin, boxMax, transform));
 }
 
-Plane parsePlane(SceneElem elem)
+std::shared_ptr<Plane> parsePlane(SceneElem elem)
 {
     Vec3 normal = getVec3(elem, "normal");
     double normalProjection = elem.getMod("d").getData().dbl;
-    return Plane(normal, normalProjection);
+    return std::shared_ptr<Plane>(new Plane(normal, normalProjection));
 }
 
-Triangle parseTriangle(SceneElem elem)
+std::shared_ptr<IShape> parseTriangle(SceneElem elem)
 {
     Transform transform = parseTransform(elem);
     Vec3 a = getVec3(elem, "a");
     Vec3 b = getVec3(elem, "b");
     Vec3 c = getVec3(elem, "c");
-    return Triangle(a, b, c, transform);
+    return std::shared_ptr<Triangle>(new Triangle(a, b, c, transform));
 }
 
-std::unique_ptr<ICamera> POVElemParser::parseCamera(SceneElem elem)
+std::shared_ptr<ICamera> POVElemParser::parseCamera(SceneElem elem)
 {
     Transform transform;
-    BoxFilter basicFilter(Vec2(1, 1));
+    std::unique_ptr<IFilter> basicFilter = std::unique_ptr<BoxFilter>(new BoxFilter(Vec2(1,1)));
     Film basicFilm(Vec2(100, 100), basicFilter, "res/scenes/test.pov");
-    std::unique_ptr<ICamera> camera = std::unique_ptr<PerspectiveCamera>
+    std::shared_ptr<ICamera> camera = std::shared_ptr<PerspectiveCamera>
         (new PerspectiveCamera(transform,basicFilm,transform,Vec4()));
     return camera;
 }
 
-std::unique_ptr<ILight> POVElemParser::parseLight(SceneElem elem)
+std::shared_ptr<ILight> POVElemParser::parseLight(SceneElem elem)
 {
-    std::unique_ptr<ILight> light = std::unique_ptr<PointLight>(new PointLight(Transform(), Color()));
+    std::shared_ptr<ILight> light = std::shared_ptr<PointLight>(new PointLight(Transform(), Color()));
     return light;
 }
 
-std::unique_ptr<IShape> POVElemParser::parseShape(SceneElem elem)
+std::shared_ptr<IShape> POVElemParser::parseShape(SceneElem elem)
 {
     if (elem.name == "sphere")
     {
-        Sphere sphere = parseSphere(elem);
-        return std::unique_ptr<Sphere>(&sphere);
+
+        return parseSphere(elem);
     }
     else if (elem.name == "triangle")
     {
-        Triangle triangle = parseTriangle(elem);
-        return std::unique_ptr<Triangle>(&triangle);
+        return parseTriangle(elem);
     }
     else if (elem.name == "box")
     {
-        Box box = parseBox(elem);
-        return std::unique_ptr<Box>(&box);
+        return parseBox(elem);
     }
     else
         std::runtime_error("Unsupported POV shape: " + elem.name);
@@ -160,7 +158,7 @@ void POVElemParser::parseCustom(SceneElem elem, SceneCreator& sceneCreator)
 {
     if (elem.name == "plane")
     {
-        Plane plane = parsePlane(elem);
+        std::shared_ptr<Plane> plane = parsePlane(elem);
         //todo add plane to sceneCreator
     }
     else

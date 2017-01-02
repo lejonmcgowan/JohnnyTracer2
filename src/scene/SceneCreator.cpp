@@ -45,20 +45,20 @@ SceneCreator SceneCreator::addToScene(SceneElem elemData, SceneElemParser& elemP
     {
         case SceneElem::SHAPE:
         {
-            std::unique_ptr<IShape> shape = elemParser.parseShape(elemData);
-            addToScene(*shape);
+            std::shared_ptr<IShape> shape = elemParser.parseShape(elemData);
+            addToScene(std::move(shape));
             break;
         }
         case SceneElem::CAMERA:
         {
-            std::unique_ptr<ICamera> camera = elemParser.parseCamera(elemData);
-            addToScene(*camera);
+            std::shared_ptr<ICamera> camera = elemParser.parseCamera(elemData);
+            addToScene(std::move(camera));
             break;
         }
         case SceneElem::LIGHT:
         {
-            std::unique_ptr<ILight> light = elemParser.parseLight(elemData);
-            addToScene(*light);
+            std::shared_ptr<ILight> light = elemParser.parseLight(elemData);
+            addToScene(std::move(light));
             break;
         }
         case SceneElem::CUSTOM:
@@ -70,28 +70,21 @@ SceneCreator SceneCreator::addToScene(SceneElem elemData, SceneElemParser& elemP
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(ICamera& camera)
+SceneCreator SceneCreator::addToScene(std::shared_ptr<ICamera> camera)
 {
-    std::shared_ptr<ICamera> cameraPtr;
-    cameraPtr.reset(&camera);
-    cameras.push_back(cameraPtr);
+    cameras.push_back(std::move(camera));
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(IShape& shape)
+SceneCreator SceneCreator::addToScene(std::shared_ptr<IShape> shape)
 {
-    std::shared_ptr<IShape> shapePtr;
-    shapePtr.reset(&shape);
-
-    shapes.push_back(shapePtr);
+    shapes.push_back(std::move(shape));
     return *this;
 }
 
-SceneCreator SceneCreator::addToScene(ILight& light)
+SceneCreator SceneCreator::addToScene(std::shared_ptr<ILight> light)
 {
-    std::shared_ptr<ILight> lightPtr;
-    lightPtr.reset(&light);
-    lights.push_back(lightPtr);
+    lights.push_back(std::move(light));
     return *this;
 }
 
@@ -102,6 +95,7 @@ Scene SceneCreator::build()
 
 SceneCreator SceneCreator::addToScene(std::vector<SceneElem> elems, SceneElemParser& elemParser)
 {
+    shapes.reserve(elems.size());
     for (SceneElem& elem: elems)
         addToScene(elem, elemParser);
     return *this;

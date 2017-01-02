@@ -54,6 +54,7 @@ int main(int argc, char **argv)
         SceneCreator sceneCreator;
         sceneCreator.addToScene("res/test.pov");
         //render the scene
+        int done;
     }
 
     return 0;

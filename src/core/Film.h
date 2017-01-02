@@ -16,7 +16,7 @@ protected:
     std::unique_ptr<IFilter> filter;
     std::string filename;
 public:
-    Film(Vec2 resolution, IFilter& filter, std::string filename);
+    Film(Vec2 resolution, std::unique_ptr<IFilter>& filter, std::string filename);
 };
 
 

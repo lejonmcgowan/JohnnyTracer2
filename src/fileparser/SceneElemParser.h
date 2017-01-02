@@ -16,9 +16,9 @@ class SceneCreator;
 class SceneElemParser
 {
 public:
-    virtual std::unique_ptr<ICamera> parseCamera(SceneElem elem) = 0;
-    virtual std::unique_ptr<ILight> parseLight(SceneElem elem) = 0;
-    virtual std::unique_ptr<IShape> parseShape(SceneElem elem) = 0;
+    virtual std::shared_ptr<ICamera> parseCamera(SceneElem elem) = 0;
+    virtual std::shared_ptr<ILight> parseLight(SceneElem elem) = 0;
+    virtual std::shared_ptr<IShape> parseShape(SceneElem elem) = 0;
     virtual void parseCustom(SceneElem elem, SceneCreator& sceneCreator){};
 };
 

@@ -16,11 +16,11 @@
 #include <fileparser/SceneElemParser.h>
 #include <fileparser/SceneFileParser.h>
 
-class SceneCreator {
+class SceneCreator
+{
 private:
-    std::pair<std::shared_ptr<SceneFileParser>,std::shared_ptr<SceneElemParser>> getParserAndMethod(std::string
-                                                                                                    fileName);
-
+    std::pair<std::shared_ptr<SceneFileParser>, std::shared_ptr<SceneElemParser>> getParserAndMethod(std::string
+                                                                                                     fileName);
 public:
     std::vector<std::shared_ptr<IShape>> shapes;
     std::vector<std::shared_ptr<ILight>> lights;
@@ -28,15 +28,15 @@ public:
 
     SceneCreator addToScene(std::string fileName);
 
-    SceneCreator addToScene(SceneElem elemData,SceneElemParser& elemParser);
+    SceneCreator addToScene(SceneElem elemData, SceneElemParser& elemParser);
 
-    SceneCreator addToScene(std::vector<SceneElem> elemData,SceneElemParser& elemParser);
+    SceneCreator addToScene(std::vector<SceneElem> elemData, SceneElemParser& elemParser);
 
-    SceneCreator addToScene(ICamera& camera);
+    SceneCreator addToScene(std::shared_ptr<ICamera> camera);
 
-    SceneCreator addToScene(IShape& shape);
+    SceneCreator addToScene(std::shared_ptr<IShape> shape);
 
-    SceneCreator addToScene(ILight& light);
+    SceneCreator addToScene(std::shared_ptr<ILight> light);
 
     Scene build();
 };

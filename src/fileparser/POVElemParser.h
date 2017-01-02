@@ -9,9 +9,9 @@
 
 class POVElemParser: public SceneElemParser
 {
-    std::unique_ptr<ICamera> parseCamera(SceneElem elem) override;
-    std::unique_ptr<ILight> parseLight(SceneElem elem) override;
-    std::unique_ptr<IShape> parseShape(SceneElem elem) override;
+    std::shared_ptr<ICamera> parseCamera(SceneElem elem) override;
+    std::shared_ptr<ILight> parseLight(SceneElem elem) override;
+    std::shared_ptr<IShape> parseShape(SceneElem elem) override;
 public:
     void parseCustom(SceneElem elem, SceneCreator& sceneCreator) override;
 };
