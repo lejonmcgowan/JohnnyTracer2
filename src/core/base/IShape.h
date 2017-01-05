@@ -7,7 +7,7 @@
 
 
 #include <core/Transform.h>
-#include <geometry/BBox.h>
+#include <core/BBox.h>
 #include <geometry/Ray.h>
 #include <memory>
 #include <geometry/SurfaceInteraction.h>

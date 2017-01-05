@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_PLANE_H
 
 
-#include <core/IShape.h>
+#include <core/base/IShape.h>
 
 class Plane
 {

@@ -6,9 +6,9 @@
 #define JOHNNYRENDERER2_ICAMERA_H
 
 
-#include "utils/UnitUtils.h"
+#include "core/utils/UnitUtils.h"
 #include <core/Transform.h>
-#include "Film.h"
+#include "core/Film.h"
 
 class ICamera
 {

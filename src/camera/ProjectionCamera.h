@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_PROJECTIONCAMERA_H
 
 
-#include <core/ICamera.h>
+#include <core/base/ICamera.h>
 class ProjectionCamera: public ICamera
 {
 protected:

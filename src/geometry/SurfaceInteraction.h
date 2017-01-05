@@ -11,6 +11,7 @@ class IShape;
 
 struct SurfaceInteraction: public Interaction
 {
+    //todo need to refer back to pg. 116 for further implementation
     struct Partials
     {
         Vec3 u;

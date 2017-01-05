@@ -9,9 +9,9 @@
 #include <string>
 #include <memory>
 
-#include <core/ICamera.h>
-#include <core/IShape.h>
-#include <core/ILight.h>
+#include <core/base/ICamera.h>
+#include <core/base/IShape.h>
+#include <core/base/ILight.h>
 #include <scene/Scene.h>
 #include <fileparser/SceneElemParser.h>
 #include <fileparser/SceneFileParser.h>

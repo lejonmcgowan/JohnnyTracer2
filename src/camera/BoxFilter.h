@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_BOXFILTER_H
 
 
-#include <core/IFilter.h>
+#include <core/base/IFilter.h>
 class BoxFilter: public IFilter
 {
 public:

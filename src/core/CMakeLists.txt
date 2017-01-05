@@ -1,20 +1,20 @@
-add_library(core IVolumeRegion.h IVolumeRegion.cpp
-        IShape.cpp IShape.h
-        IAggregate.cpp IAggregate.h
-        ICamera.cpp ICamera.h
-        ISampler.cpp ISampler.h
-        IFilter.cpp IFilter.h
+add_library(core
+        base/IShape.cpp base/IShape.h
+        base/IAggregate.cpp base/IAggregate.h
+        base/ICamera.cpp base/ICamera.h
+        base/ISampler.cpp base/ISampler.h
+        base/IFilter.cpp base/IFilter.h
         Film.cpp Film.h
-        IMaterial.cpp IMaterial.h
-        ITexture.cpp ITexture.h
-        ILight.cpp
-        IRenderer.cpp
+        base/IMaterial.cpp base/IMaterial.h
+        base/ITexture.cpp base/ITexture.h
+        base/ILight.cpp
         Transform.h Transform.cpp
-        ISurfaceIntegrator.cpp ISurfaceIntegrator.h
-        IVolumeIntegrator.cpp IVolumeIntegrator.h
         utils/Constants.h
         utils/SceneContext.h
-        utils/UnitUtils.h)
+        utils/UnitUtils.h
+        base/IMedium.cpp base/IMedium.h
+        base/IIntegrator.cpp base/IIntegrator.h
+        BBox.cpp BBox.h)
 
 target_link_libraries(core geometry)
 

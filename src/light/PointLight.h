@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_POINTLIGHT_H
 
 
-#include <core/ILight.h>
+#include <core/base/ILight.h>
 
 class PointLight: public ILight
 {

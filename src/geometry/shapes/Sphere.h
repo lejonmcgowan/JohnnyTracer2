@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_SPHERE_H
 
 
-#include <core/IShape.h>
+#include <core/base/IShape.h>
 
 class Sphere: public IShape
 {

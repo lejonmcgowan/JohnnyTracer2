@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_BBOX_H
 #include <core/utils/UnitUtils.h>
 #include <core/Transform.h>
-#include "Ray.h"
+#include "geometry/Ray.h"
 
 class BBox
 {

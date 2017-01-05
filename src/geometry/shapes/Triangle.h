@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_TRIANGLE_H
 
 
-#include <core/IShape.h>
+#include <core/base/IShape.h>
 
 class Triangle: public IShape
 {

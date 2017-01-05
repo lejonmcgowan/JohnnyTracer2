@@ -6,9 +6,9 @@
 #define JOHNNYRENDERER2_SAMPLE_H
 
 
-#include <core/ISampler.h>
-#include <core/ISurfaceIntegrator.h>
-#include <core/IVolumeIntegrator.h>
+#include <core/base/ISampler.h>
+#include <Integrators/ISurfaceIntegrator.h>
+#include <Integrators/IVolumeIntegrator.h>
 #include "CameraSample.h"
 #include <vector>
 

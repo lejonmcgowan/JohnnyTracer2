@@ -6,10 +6,10 @@
 #define JOHNNYRENDERER2_SCENEELEMPARSER_H
 
 
-#include <core/ILight.h>
-#include <core/ICamera.h>
+#include <core/base/ILight.h>
+#include <core/base/ICamera.h>
 #include <scene/SceneElem.h>
-#include <core/IShape.h>
+#include <core/base/IShape.h>
 #include <scene/Scene.h>
 
 class SceneCreator;

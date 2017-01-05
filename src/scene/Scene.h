@@ -4,37 +4,37 @@
 
 #ifndef JOHNNYRENDERER2_SCENE_H
 #define JOHNNYRENDERER2_SCENE_H
-#include "geometry/IPrimitive.h"
-#include "core/ILight.h"
-#include "core/IVolumeRegion.h"
-
+#include <geometry/IPrimitive.h>
+#include <core/base/ILight.h>
+#include <core/BBox.h>
 /**
  * the actual data structure used by the Ray tracer to generate an image.
  */
 class Scene
 {
-private:
-    std::shared_ptr<IPrimitive> aggregate;
-    std::vector<std::shared_ptr<ILight>> lights;
-    std::shared_ptr<IVolumeRegion> volumeRegion;
-    BBox bounds;
 public:
-    Scene()
+    // Scene Public Methods
+    Scene(std::shared_ptr<IPrimitive> aggregate, const std::vector<std::shared_ptr<ILight>> &lights);
+    const BBox &WorldBound() const { return worldBound; }
+    bool intersect(const Ray &ray, SurfaceInteraction *isect) const
     {
-        bounds = aggregate->getBounds();
+        return aggregate->intersect(ray,isect);
     }
-    /**
-     * shoot a ray into the scene and determine the nearest object in the scene that it intersects with, if any
-     * @param ray the ray to shoot into the scene
-     * @return a pointer containing data based on the scene contiditions and nearest intersection
-     */
-    std::shared_ptr<SurfaceInteraction> queryIntersect(const Ray ray);
-    /**
-     * a less computationally expensive shot into the scene that determines if the ray collides with any object
-     * @param ray the ray to shoot into the scene
-     * @return a bool representing whether or not an object was hit.
-     */
-    bool checkIntersect(const Ray ray);
+    bool intersectQuick(const Ray &ray) const
+    {
+        return aggregate->intersectQuick(ray);
+    }
 
+    // Scene Public Data
+    std::vector<std::shared_ptr<ILight>> lights;
+    // Store infinite light sources separately for cases where we only want
+    // to loop over them.
+    std::vector<std::shared_ptr<ILight>> infiniteLights;
+
+private:
+    // Scene Private Data
+    std::shared_ptr<IPrimitive> aggregate;
+    BBox worldBound;
 };
+
 #endif //JOHNNYRENDERER2_SCENE_H

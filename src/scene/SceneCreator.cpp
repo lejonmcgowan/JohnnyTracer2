@@ -90,7 +90,8 @@ SceneCreator SceneCreator::addToScene(std::shared_ptr<ILight> light)
 
 Scene SceneCreator::build()
 {
-    return Scene();
+    std::vector<std::shared_ptr<ILight>> lights;
+    return Scene(nullptr,lights);
 }
 
 SceneCreator SceneCreator::addToScene(std::vector<SceneElem> elems, SceneElemParser& elemParser)
