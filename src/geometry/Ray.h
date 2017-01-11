@@ -13,6 +13,7 @@ struct Ray
     const Point origin;
     const Vec3 direction;
     const int depth;
+    Number tMax = NumberInfinity;
 
     /**
      * constructor for all fields

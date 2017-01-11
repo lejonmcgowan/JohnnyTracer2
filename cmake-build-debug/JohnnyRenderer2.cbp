@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="JohnnyRenderer2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\camera\;CMake Files\src\core\;CMake Files\src\fileparser\;CMake Files\src\geometry\;CMake Files\src\integrators\;CMake Files\src\light\;CMake Files\src\sampler\;CMake Files\src\scene\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="JohnnyRenderer2">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/bin/JohnnyRenderer2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 JohnnyRenderer2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="JohnnyRenderer2/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/bin/JohnnyRenderer2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 JohnnyRenderer2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="camera">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libcamera.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 camera"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="camera/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libcamera.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 camera/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/camera/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="core">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 core"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="core/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 core/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fileparser">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libfileparser.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 fileparser"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fileparser/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libfileparser.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 fileparser/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/fileparser/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="geometry">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libgeometry.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 geometry"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="geometry/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libgeometry.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 geometry/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/geometry/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="integrators">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libintegrators.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 integrators"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="integrators/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libintegrators.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 integrators/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/integrators/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="light">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/liblight.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 light"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="light/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/liblight.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 light/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/light/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scene">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libscene.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 scene"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scene/fast">
+				<Option output="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/lib/libscene.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src"/>
+					<Add directory="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/ext"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 scene/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/cmake-build-debug/src/scene/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/BoxFilter.cpp">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/BoxFilter.h">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/OrthroCamera.cpp">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/OrthroCamera.h">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/PerspectiveCamera.cpp">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/PerspectiveCamera.h">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/ProjectionCamera.cpp">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/ProjectionCamera.h">
+			<Option target="camera"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/BBox.cpp">
+			<Option target="core"/>
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/BBox.h">
+			<Option target="core"/>
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/Film.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/Film.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/IPrimitive.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/Transform.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/Transform.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IAggregate.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IAggregate.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ICamera.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ICamera.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IFilter.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IFilter.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IIntegrator.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IIntegrator.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ILight.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ILight.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IMaterial.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IMaterial.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IMedium.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IMedium.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ISampler.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ISampler.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IShape.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/IShape.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ITexture.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/base/ITexture.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/utils/Constants.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/utils/SceneContext.h">
+			<Option target="core"/>
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/utils/UnitUtils.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/POVElemParser.cpp">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/POVElemParser.h">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/POVParser.cpp">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/POVParser.h">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/SceneElemParser.cpp">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/SceneElemParser.h">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/SceneFileParser.cpp">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/SceneFileParser.h">
+			<Option target="fileparser"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/GeomPrimitive.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/GeomPrimitive.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/IMaterial.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/Interaction.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/Ray.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/SurfaceInteraction.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/bxdfs/BSDF.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/bxdfs/BSDF.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/bxdfs/BXDF.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Box.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Box.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Plane.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Plane.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Sphere.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Sphere.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Triangle.cpp">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/shapes/Triangle.h">
+			<Option target="geometry"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/ISurfaceIntegrator.cpp">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/ISurfaceIntegrator.h">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/IVolumeIntegrator.cpp">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/IVolumeIntegrator.h">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/IVolumeRegion.cpp">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/IVolumeRegion.h">
+			<Option target="integrators"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light/AreaLight.cpp">
+			<Option target="light"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light/AreaLight.h">
+			<Option target="light"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light/PointLight.cpp">
+			<Option target="light"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light/PointLight.h">
+			<Option target="light"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/main.cpp">
+			<Option target="JohnnyRenderer2"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/sampler/CameraSample.h">
+			<Option target="JohnnyRenderer2"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/sampler/Sample.h">
+			<Option target="JohnnyRenderer2"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/Scene.cpp">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/Scene.h">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/SceneCreator.cpp">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/SceneCreator.h">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/SceneElem.h">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/SceneElemMod.h">
+			<Option target="scene"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/camera/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\camera\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\core\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/fileparser/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\fileparser\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/geometry/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\geometry\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/integrators/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\integrators\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/light/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\light\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/sampler/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\sampler\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/src/scene/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\scene\"/>
+		</Unit>
+		<Unit filename="/home/lejonmcgowan/Dropbox/projects/JohnnyTracer2/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -12,6 +12,10 @@ namespace Constants
     {
         return (n * machineEpsilon) / (1 - n * machineEpsilon);
     }
+    inline Number clamp (Number num, Number min, Number max)
+    {
+        return std::min(std::max(num,min),max);
+    }
 
 }
 #endif //JOHNNYRENDERER2_CONSTUTILS_H

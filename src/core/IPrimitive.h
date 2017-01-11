@@ -8,25 +8,25 @@
 #include <vector>
 #include <core/base/IMaterial.h>
 
-#include "Ray.h"
+#include "geometry/Ray.h"
 #include "core/BBox.h"
-#include "SurfaceInteraction.h"
 
 class AreaLight;
+class SurfaceInteraction;
 
 class IPrimitive
 {
 public:
     // Primitive Interface
     virtual ~IPrimitive(){};
-    virtual BBox WorldBound() const = 0;
-    virtual bool intersect(const Ray &r, SurfaceInteraction *) const = 0;
-    virtual bool intersectQuick(const Ray &r) const = 0;
-    virtual const AreaLight *GetAreaLight() const = 0;
-    virtual const IMaterial *GetMaterial() const = 0;
+    virtual BBox worldBound() = 0;
+    virtual bool intersect(Ray &r, SurfaceInteraction *) = 0;
+    virtual bool intersectQuick(Ray &r) const = 0;
+    virtual const std::shared_ptr<AreaLight> getAreaLight() const = 0;
+    virtual const std::shared_ptr<IMaterial> getMaterial() const = 0;
 
     //note: you may wanna look back into pg. 960 for adding a "Transport Mode" parameter
-    virtual void ComputeScatteringFunctions(SurfaceInteraction *isect, bool allowMultipleLobes) const = 0;
+    virtual void computeScatteringFunctions(SurfaceInteraction *isect, bool allowMultipleLobes) const = 0;
 };
 
 /*virtually the same funcitionality (with error catching in pbrt), but I'd rather just keep it abstract.

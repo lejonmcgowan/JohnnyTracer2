@@ -5,10 +5,12 @@
 #ifndef JOHNNYRENDERER2_IMATERIAL_H
 #define JOHNNYRENDERER2_IMATERIAL_H
 
+class SurfaceInteraction;
 
 class IMaterial
 {
-
+public:
+    virtual void computeScatteringFunctions(SurfaceInteraction* isect, bool allowMultipleLobes) = 0;
 };
 
 

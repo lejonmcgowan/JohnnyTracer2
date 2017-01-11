@@ -17,11 +17,10 @@ public:
     struct HitPacket
     {
         Number tHit;
-        SurfaceInteraction hitData;
-        bool testAlphaTexture = true;
+        SurfaceInteraction& hitData;
+        bool testAlphaTexture;
         bool successfulHit;
-        HitPacket(Number tHit):
-                tHit(tHit){}
+        HitPacket(SurfaceInteraction& hitData): hitData(hitData){}
 
     };
 protected:

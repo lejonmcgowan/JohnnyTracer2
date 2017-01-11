@@ -397,7 +397,6 @@ void parseAndAddShapeMods(const std::vector<std::string>& tokens, int iter, Scen
  */
 int exhaustBlock(int iter, const std::vector<std::string>& tokens, int initStack = 1)
 {
-    //todo need a stack-like system to properly find the end of the shape blocks
     int bracketStack = initStack;
     while (iter < tokens.size() && bracketStack > 0)
     {

@@ -4,7 +4,7 @@
 
 #ifndef JOHNNYRENDERER2_SCENE_H
 #define JOHNNYRENDERER2_SCENE_H
-#include <geometry/IPrimitive.h>
+#include <core/IPrimitive.h>
 #include <core/base/ILight.h>
 #include <core/BBox.h>
 /**
@@ -16,11 +16,11 @@ public:
     // Scene Public Methods
     Scene(std::shared_ptr<IPrimitive> aggregate, const std::vector<std::shared_ptr<ILight>> &lights);
     const BBox &WorldBound() const { return worldBound; }
-    bool intersect(const Ray &ray, SurfaceInteraction *isect) const
+    bool intersect(Ray &ray, SurfaceInteraction *isect) const
     {
         return aggregate->intersect(ray,isect);
     }
-    bool intersectQuick(const Ray &ray) const
+    bool intersectQuick(Ray &ray) const
     {
         return aggregate->intersectQuick(ray);
     }

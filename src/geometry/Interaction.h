@@ -12,5 +12,8 @@ struct Interaction
     //negative ray direction
     Vec3 wo;
     Vec3 normal;
+
+    Interaction(const Point HitPoint, const Vec3 normal, const Vec3 wo, Number time):
+        hitPoint(hitPoint),normal(normal),wo(wo),time(time){}
 };
 #endif //JOHNNYRENDERER2_INTERSECTION_H
