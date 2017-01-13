@@ -13,13 +13,13 @@ struct Ray
     const Point origin;
     const Vec3 direction;
     const int depth;
-    Number tMax = NumberInfinity;
+    Number tMax;
 
     /**
      * constructor for all fields
      */
-    Ray(Point origin, Vec3 direction, int depth):origin(origin),direction(direction),depth
-            (depth){}
+    Ray(Point origin, Vec3 direction, int depth, Number tMax = NumberInfinity):origin(origin),direction(direction),depth
+            (depth), tMax(tMax){}
 
     /**
      * constructor for a base ray (0 depth, 0 time) at the origin
@@ -36,6 +36,6 @@ struct Ray
      *
      * @return a Number representing the point along the ray at the givent time t
      */
-    Point calcPoint(float t){return origin + direction * t;}
+    Point calcPoint(float t) const {return origin + direction * t;}
 };
 #endif //JOHNNYRENDERER2_RAY_H_H

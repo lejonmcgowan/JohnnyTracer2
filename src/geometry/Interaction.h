@@ -8,12 +8,11 @@ struct Interaction
 {
     // Interaction Public Data
     Point hitPoint;
-    Number time;
     //negative ray direction
     Vec3 wo;
     Vec3 normal;
 
-    Interaction(const Point HitPoint, const Vec3 normal, const Vec3 wo, Number time):
-        hitPoint(hitPoint),normal(normal),wo(wo),time(time){}
+    Interaction(const Point HitPoint, const Vec3 normal, const Vec3 wo):
+        hitPoint(hitPoint),normal(normal),wo(wo){}
 };
 #endif //JOHNNYRENDERER2_INTERSECTION_H

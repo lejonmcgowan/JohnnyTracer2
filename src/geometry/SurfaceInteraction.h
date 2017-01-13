@@ -42,13 +42,13 @@ struct SurfaceInteraction: public Interaction
 
     Shading shading;
 
-    SurfaceInteraction(const Point& HitPoint, const Vec3& normal, const Vec3& wo, Number time,
+    SurfaceInteraction(const Point HitPoint, const Vec3 normal, const Vec3 wo,
     Partials partialPoints, Partials partiialNormals, std::shared_ptr<IShape> shape)
-        : Interaction(HitPoint, normal, wo, time),partialPoints(partialPoints),partialNormals(partiialNormals),
+        : Interaction(HitPoint, normal, wo),partialPoints(partialPoints),partialNormals(partiialNormals),
     shape(shape)
     {
         //set the shaidng copies for use in BSDFs later
-        shading.n = normal;
+        shading.normal = normal;
         shading.partialPoints = partialPoints;
         shading.partialNormals = partiialNormals;
     }

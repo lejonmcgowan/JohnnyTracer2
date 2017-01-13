@@ -79,6 +79,12 @@ void Transform::scaleBy(Vec3 scaling)
     invTrans = scale(trans,-scaling);
 }
 
+void Transform::scaleBy(Number scaling)
+{
+    trans = scale(trans,Vec3(scaling,scaling,scaling));
+    invTrans = scale(trans,Vec3(-scaling,-scaling,-scaling));
+}
+
 void Transform::scaleTo(Vec3 scaling)
 {
     //we need the original rotation and translation

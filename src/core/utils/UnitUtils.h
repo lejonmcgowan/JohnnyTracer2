@@ -6,6 +6,7 @@
 #define JOHNNYRENDERER2_POINT_H
 #include <glm/glm.hpp>
 #include <limits>
+#include <glm/gtc/constants.hpp>
 
 typedef glm::ivec2 IVec2;
 typedef glm::ivec3 IVec3;
@@ -14,10 +15,14 @@ typedef glm::ivec4 IVec4;
 #ifndef DOUBLE_PRECISION
 typedef float Number;
 const float NumberInfinity = std::numeric_limits<float>::max();
+const Number NumberPI = 3.14159265358979323846f;
 #else
 typedef double Number;
 const double NumberInfinity  = std::numeric_limits<double>::max();
+const Number NumberPI = 3.14159265358979323846;
 #endif
+
+
 
 typedef glm::tvec2<Number, glm::highp> Vec2;
 typedef glm::tvec3<Number, glm::highp> Vec3;

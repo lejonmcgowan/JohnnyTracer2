@@ -12,7 +12,8 @@ BBox IShape::getWorldBounds()
 
 bool IShape::intersectQuick(const Ray &ray, bool alphaTexture)
 {
-    SurfaceInteraction mockSect;
+    Vec3 mockHit;
+    SurfaceInteraction mockSect(mockHit,mockHit,mockHit,SurfaceInteraction::Partials(),SurfaceInteraction::Partials(),nullptr);
     HitPacket packet(mockSect);
 
     return intersect(ray,packet);

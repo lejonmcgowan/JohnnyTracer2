@@ -20,11 +20,11 @@ Vec3 BBox::getMax() const
 {
     return max;
 }
-BBox::BBox():BBox(glm::vec3(),glm::vec3())
+BBox::BBox():BBox(Vec3(),Vec3())
 {
 
 }
-BBox::BBox(glm::vec3 min, glm::vec3 max):min(min),max(max)
+BBox::BBox(Vec3 min, Vec3 max):min(min),max(max)
 {
 
 }

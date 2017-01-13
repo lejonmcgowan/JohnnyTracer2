@@ -28,13 +28,13 @@ public:
     inline static Number tanTheta(const Vec3& w){return sinTheta(w) / cosTheta(w);}
     inline static Number sinPhi(const Vec3& w)
     {
-        Number sinTheta = sinTheta(w);
-        return sinTheta == 0 ? 1 : Constants::clamp(w.y / sinTheta,-1,1);
+        Number sTheta = sinTheta(w);
+        return sTheta == 0 ? 1 : Constants::clamp(w.y / sTheta,-1,1);
     }
     inline static Number cosPhi(const Vec3& w)
     {
-        Number sinTheta = sinTheta(w);
-        return sinTheta == 0 ? 1 : Constants::clamp(w.x / sinTheta,-1,1);
+        Number sTheta = sinTheta(w);
+        return sTheta == 0 ? 1 : Constants::clamp(w.x / sTheta,-1,1);
     }
     inline static Number sin2Phi(const Vec3& w){return sinPhi(w) * sinPhi(w);}
     inline static Number cos2Phi(const Vec3& w){return cosPhi(w) * cosPhi(w);}
