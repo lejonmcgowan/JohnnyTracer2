@@ -15,6 +15,11 @@ struct Ray
     const int depth;
     Number tMax;
 
+    //for camera stuff
+    bool hasDifferentials = false;
+    Vec3 originDiffX, originDiffY;
+    Vec3 directionDiffX, directionDiffY;
+
     /**
      * constructor for all fields
      */
@@ -37,5 +42,14 @@ struct Ray
      * @return a Number representing the point along the ray at the givent time t
      */
     Point calcPoint(float t) const {return origin + direction * t;}
+
+
+    void scaleDifferentials(Number s)
+    {
+        originDiffX = s * (originDiffX - origin) + origin;
+        originDiffY = s * (originDiffY - origin) + origin;
+        directionDiffX = s * (directionDiffX - direction) + direction;
+        directionDiffY = s * (directionDiffY - direction) + direction;
+    }
 };
 #endif //JOHNNYRENDERER2_RAY_H_H

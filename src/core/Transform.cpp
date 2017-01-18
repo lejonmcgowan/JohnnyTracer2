@@ -106,11 +106,11 @@ bool Transform::isLeftHanded()
     return determinant(Mat3(trans)) < 0;
 }
 
-Mat4 Transform::getTransMatrix()
+Mat4 Transform::getTransMatrix() const
 {
     return trans;
 }
-Mat4 Transform::getInverseMatrix()
+Mat4 Transform::getInverseMatrix() const
 {
     return invTrans;
 }

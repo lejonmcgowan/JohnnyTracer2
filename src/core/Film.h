@@ -11,7 +11,9 @@
 #include "core/base/IFilter.h"
 class Film
 {
-protected:
+private:
+    friend class ProjectionCamera;
+
     Vec2 res;
     std::unique_ptr<IFilter> filter;
     std::string filename;

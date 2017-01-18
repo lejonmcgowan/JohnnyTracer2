@@ -37,8 +37,8 @@ public:
 
     bool isLeftHanded();
 
-    Mat4 getTransMatrix();
-    Mat4 getInverseMatrix();
+    Mat4 getTransMatrix() const;
+    Mat4 getInverseMatrix() const;
 
     inline Ray transformRay(const Ray ray, bool inverseTrans = false)
     {

@@ -10,14 +10,18 @@
 class ProjectionCamera: public ICamera
 {
 protected:
-    Transform proj; //camera to screen
+    Vec4 screenWindow;
+    Transform cameraToScreen;
     Transform screenToRaster;
+    Transform rasterToCamera;
 public:
     ProjectionCamera(
-        const Transform& transform,
+        const Transform& cameraToWorld,
         const Film& film,
-        const Transform& projection,
+        const Transform& cameraToScreen,
         Vec4 screenWindow);
+
+    float generateRay(const CameraSample& sample, Ray *ray) const override;
 
 };
 
