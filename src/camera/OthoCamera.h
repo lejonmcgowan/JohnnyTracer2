@@ -6,7 +6,7 @@
 #define JOHNNYRENDERER2_ORTHROCAMERA_H
 
 
-class Orthrocamera
+class OthoCamera
 {
 
 };

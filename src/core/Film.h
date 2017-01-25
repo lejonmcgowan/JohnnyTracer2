@@ -13,6 +13,8 @@ class Film
 {
 private:
     friend class ProjectionCamera;
+    friend class PerspectiveCamera;
+    friend class othographicCamera;
 
     Vec2 res;
     std::unique_ptr<IFilter> filter;

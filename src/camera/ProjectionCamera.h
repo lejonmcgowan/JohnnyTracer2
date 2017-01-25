@@ -15,6 +15,8 @@ protected:
     Transform screenToRaster;
     Transform rasterToCamera;
 public:
+    float generateRayDifferentials(const CameraSample &sample, Ray *ray) const override;
+
     ProjectionCamera(
         const Transform& cameraToWorld,
         const Film& film,

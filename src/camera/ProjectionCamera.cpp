@@ -35,3 +35,8 @@ float ProjectionCamera::generateRay(const ICamera::CameraSample& sample, Ray *ra
 {
     return 1;
 }
+
+float ProjectionCamera::generateRayDifferentials(const ICamera::CameraSample &sample, Ray *ray) const
+{
+    return ICamera::generateRayDifferentials(sample, ray);
+}

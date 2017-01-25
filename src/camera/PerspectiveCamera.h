@@ -15,6 +15,17 @@ public:
                       Transform projection,
                       Vec4 screenWindow);
 
+    float generateRayDifferentials(const CameraSample &sample, Ray *ray) const override;
+
+    PerspectiveCamera(const Transform &cameraToWorld, const Film &film, const Transform &cameraToScreen,
+                      Vec4 screenWindow);
+
+    float generateRay(const CameraSample &sample, Ray *ray) const override;
+
+private:
+    Vec3 dxCamera, dyCamera;
+    Transform persprctive(float fov, float n, float f);
+
 };
 
 

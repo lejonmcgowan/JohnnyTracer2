@@ -25,7 +25,8 @@ protected:
 public:
     ICamera(Transform transform, const Film& film);
     virtual float generateRay(const CameraSample&, Ray* ray) const = 0;
-    float generateRayDifferentials(const CameraSample& sample, Ray* ray) const;
+
+    virtual float generateRayDifferentials(const CameraSample& sample, Ray* ray) const;
 };
 
 
