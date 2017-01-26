@@ -40,13 +40,13 @@ public:
     Mat4 getTransMatrix() const;
     Mat4 getInverseMatrix() const;
 
-    inline Ray transformRay(const Ray ray, bool inverseTrans = false)
+    inline Ray transformRay(const Ray ray, bool inverseTrans = false) const
     {
         return Ray(transformPoint(ray.origin, inverseTrans),
                      transformVec3(ray.direction, inverseTrans),ray.depth,ray.tMax);
     }
 
-    inline Point transformPoint(const Point point, bool inverseTrans = false)
+    inline Point transformPoint(const Point point, bool inverseTrans = false) const
     {
         Vec4 point4(point.x,point.y,point.z,1);
         Mat4 transform = inverseTrans ? invTrans : trans;
@@ -54,7 +54,7 @@ public:
         return Vec3(finalPoint.x,finalPoint.y,finalPoint.z);
     }
 
-    inline Vec3 transformVec3(const Vec3 vec, bool inverseTrans = false)
+    inline Vec3 transformVec3(const Vec3 vec, bool inverseTrans = false) const
     {
         Vec4 tempVec4(vec.x,vec.y,vec.z,0);
         Mat4 transform = inverseTrans ? invTrans : trans;

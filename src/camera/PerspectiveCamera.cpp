@@ -4,15 +4,6 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include "PerspectiveCamera.h"
-PerspectiveCamera::PerspectiveCamera(Transform transform,
-                                     const Film& film,
-                                     Transform projection,
-                                     Vec4 screenWindow)
-    : ProjectionCamera(transform, film, projection, screenWindow)
-{
-    dxCamera = rasterToCamera.transformPoint(Vec3(1,0,0)) - rasterToCamera.transformPoint(Vec3(0,0,0));
-    dyCamera = rasterToCamera.transformPoint(Vec3(0,1,0)) - rasterToCamera.transformPoint(Vec3(0,0,0));
-}
 
 float PerspectiveCamera::generateRayDifferentials(const ICamera::CameraSample &sample, Ray *ray) const
 {
@@ -23,13 +14,20 @@ PerspectiveCamera::PerspectiveCamera(const Transform &cameraToWorld, const Film 
                                      Vec4 screenWindow) : ProjectionCamera(cameraToWorld, film, cameraToScreen,
                                                                            screenWindow)
 {
-
+    dxCamera = rasterToCamera.transformPoint(Vec3(1,0,0)) - rasterToCamera.transformPoint(Vec3(0,0,0));
+    dyCamera = rasterToCamera.transformPoint(Vec3(0,1,0)) - rasterToCamera.transformPoint(Vec3(0,0,0));
 }
 
 float PerspectiveCamera::generateRay(const ICamera::CameraSample &sample, Ray *ray) const
 {
+    Point pFilm(sample.filmPoint.x,sample.filmPoint.y,0);
+    Point pCamera = rasterToCamera.transformPoint(Point(sample.lensPoitnt.x,sample.lensPoitnt.y,0));
+    *ray = Ray(Vec3(0,0,0),glm::normalize(pCamera),0);
 
-    return ProjectionCamera::generateRay(sample, ray);
+    //todo modify ray for FOV
+
+    *ray = cameraToWorld.transformRay(*ray);
+    return 1;
 }
 
 Transform PerspectiveCamera::persprctive(float fov, float n, float f)
