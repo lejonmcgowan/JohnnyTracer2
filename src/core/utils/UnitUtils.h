@@ -38,4 +38,8 @@ typedef Vec2 Point2D;
 
 typedef Vec4 Color;
 
+inline Number dot(Vec2 a, Vec2 b){return a.x * b.x + a.y * b.y;}
+inline Number dot(Vec3 a, Vec3 b){return a.x * b.x + a.y * b.y + a.z * b.z;}
+inline Number dot(Vec4 a, Vec4 b){return a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w;}
+
 #endif //JOHNNYRENDERER2_POINT_H

@@ -6,6 +6,7 @@
 #define JOHNNYRENDERER2_SCENECONTEXT_H
 
 #include <string>
+
 /**
  * "Global" setting of various parameters and metadata the entire ray-tracer may need to know. Placed here for
  * simplicity in

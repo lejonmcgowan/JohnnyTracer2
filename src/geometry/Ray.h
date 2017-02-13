@@ -10,9 +10,8 @@
 //todo: keep in mind the differential directions for more fancy stuff later on
 struct Ray
 {
-    const Point origin;
-    const Vec3 direction;
-    const int depth;
+    Point origin;
+    Vec3 direction;
     Number tMax;
 
     //for camera stuff
@@ -23,18 +22,12 @@ struct Ray
     /**
      * constructor for all fields
      */
-    Ray(Point origin, Vec3 direction, int depth, Number tMax = NumberInfinity):origin(origin),direction(direction),depth
-            (depth), tMax(tMax){}
+    Ray(Point origin, Vec3 direction, Number tMax = NumberInfinity):origin(origin),direction(direction),tMax(tMax){}
 
     /**
      * constructor for a base ray (0 depth, 0 time) at the origin
      */
     Ray(Vec3 direction):Ray(Point(0,0,0),direction,0){}
-
-    /**
-     * constructor based on a "parent" ray for recusive descent
-     */
-    Ray(const Ray& parent,Vec3 direction):Ray(parent.origin,direction,parent.depth + 1){}
 
     /**
      * calculates a point along the ray based on the given time

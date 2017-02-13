@@ -24,7 +24,7 @@ public:
 
     };
 protected:
-    //possible optimization: make a transform pool and draw from that via a pointer
+    //possible optimization: make a lightToWorld pool and draw from that via a pointer
     Transform worldtransform;
     bool leftHanded;
     BBox boundingBox;

@@ -5,8 +5,18 @@
 #ifndef JOHNNYRENDERER2_AREALIGHT_H
 #define JOHNNYRENDERER2_AREALIGHT_H
 
-class AreaLight
+#include <core/base/ILight.h>
+#include <geometry/Interaction.h>
+
+class AreaLight: public ILight
 {
+public:
+    AreaLight(Transform lightToWorld, int numSamples);
+
+    Color power() override;
+
+    Color sample_li(const Interaction &interation, const Point2D point, Vec3 *wi, float *pdf,
+                    VisibilityTest *visibilityTest) override;
 
 };
 

@@ -131,7 +131,6 @@ std::shared_ptr<IShape> POVElemParser::parseShape(SceneElem elem)
 {
     if (elem.name == "sphere")
     {
-
         return parseSphere(elem);
     }
     else if (elem.name == "triangle")

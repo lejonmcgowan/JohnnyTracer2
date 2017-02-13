@@ -20,7 +20,7 @@ public:
     {
         return aggregate->intersect(ray,isect);
     }
-    bool intersectQuick(Ray &ray) const
+    bool intersectQuick(Ray ray) const
     {
         return aggregate->intersectQuick(ray);
     }

@@ -22,7 +22,7 @@ float PerspectiveCamera::generateRay(const ICamera::CameraSample &sample, Ray *r
 {
     Point pFilm(sample.filmPoint.x,sample.filmPoint.y,0);
     Point pCamera = rasterToCamera.transformPoint(Point(sample.lensPoitnt.x,sample.lensPoitnt.y,0));
-    *ray = Ray(Vec3(0,0,0),glm::normalize(pCamera),0);
+    *ray = Ray(Vec3(0,0,0),glm::normalize(pCamera));
 
     //todo modify ray for FOV
 

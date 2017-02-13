@@ -43,7 +43,7 @@ public:
     inline Ray transformRay(const Ray ray, bool inverseTrans = false) const
     {
         return Ray(transformPoint(ray.origin, inverseTrans),
-                     transformVec3(ray.direction, inverseTrans),ray.depth,ray.tMax);
+                     transformVec3(ray.direction, inverseTrans),ray.tMax);
     }
 
     inline Point transformPoint(const Point point, bool inverseTrans = false) const
