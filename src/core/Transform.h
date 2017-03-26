@@ -51,7 +51,7 @@ public:
         Vec4 point4(point.x,point.y,point.z,1);
         Mat4 transform = inverseTrans ? invTrans : trans;
         Vec4 finalPoint = transform * point4;
-        return Vec3(finalPoint.x,finalPoint.y,finalPoint.z);
+        return Point(finalPoint.x,finalPoint.y,finalPoint.z);
     }
 
     inline Vec3 transformVec3(const Vec3 vec, bool inverseTrans = false) const
