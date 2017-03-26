@@ -3,21 +3,29 @@
 //
 
 #include <geometry/Interaction.h>
-#include <core/utils/UnitUtils.h>
+#include <glm/gtx/norm.hpp>
+
 #include "PointLight.h"
 
-PointLight::PointLight(Transform transform, Color color, int numSamples):ILight(transform,numSamples), color(color)
+PointLight::PointLight(Transform transform, Color color, int numSamples):ILight(transform,numSamples),
+                                                                         color(color),
+                                                                         position(transform.transformPoint(Point(0,0,0)))
 {
 
 }
 
 Color PointLight::power()
 {
-    return Color();
+    Number factor = 4 * NumberPI;
+    return color * factor;
 }
 
 Color PointLight::sample_li(const Interaction &interation, const Point2D point, Vec3 *wi, float *pdf,
                             ILight::VisibilityTest *visibilityTest)
 {
-    return Color();
+    *wi = glm::normalize(position - interation.hitPoint);
+    *pdf = 1;
+    *visibilityTest = VisibilityTest(interation,Interaction(position));
+    Number interactionDistance = glm::length2(interation.hitPoint - position);
+    return color / interactionDistance;
 }

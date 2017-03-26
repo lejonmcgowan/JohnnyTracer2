@@ -13,6 +13,7 @@ class PointLight: public ILight
 {
 private:
     Color color;
+    const Point position;
 public:
     Color power() override;
 

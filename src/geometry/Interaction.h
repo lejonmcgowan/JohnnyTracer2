@@ -14,7 +14,13 @@ struct Interaction
     //negative ray direction
     Vec3 wo;
     Vec3 normal;
-    const Vec3 pError;
+    Vec3 pError;
+
+    Interaction(){}
+
+    Interaction(const Point HitPoint):
+            hitPoint(hitPoint),normal(Vec3()),wo(Vec3()),pError(Vec3(0,0,0)){}
+
     Interaction(const Point HitPoint, const Vec3 normal, const Vec3 wo):
         hitPoint(hitPoint),normal(normal),wo(wo),pError(Vec3(0,0,0)){}
 

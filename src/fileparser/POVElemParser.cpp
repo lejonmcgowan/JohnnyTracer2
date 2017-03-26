@@ -123,7 +123,11 @@ std::shared_ptr<ICamera> POVElemParser::parseCamera(SceneElem elem)
 
 std::shared_ptr<ILight> POVElemParser::parseLight(SceneElem elem)
 {
-    std::shared_ptr<ILight> light = std::shared_ptr<PointLight>(new PointLight(Transform(), Color()));
+    Mat4 transform;
+    transform *= Vec4(getVec3(elem,"position"),1);
+
+    const Vec4 color = Color(getVec3(elem.getMod("color"), "rgb"), 1);
+    std::shared_ptr<ILight> light = std::shared_ptr<PointLight>(new PointLight(transform, color));
     return light;
 }
 

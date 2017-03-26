@@ -8,13 +8,18 @@
 #include <geometry/Interaction.h>
 
 class Scene;
+/**
+ * base implementation for lights. note that lights are defined in LIGHT SPACE and the transform is used to describe where
+ * they are in the scene
+ */
 class ILight
 {
 public:
     class VisibilityTest
     {
-        const Interaction p0,p1;
+        Interaction p0,p1;
     public:
+        VisibilityTest(){}
         VisibilityTest(const Interaction &p0, const Interaction &p1);
         const Interaction &getP0() const;
         const Interaction &getP1() const;
