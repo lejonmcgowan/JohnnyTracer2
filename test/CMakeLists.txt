@@ -20,5 +20,5 @@ add_dependencies(libgtest gtest)
 target_link_libraries(libgtest INTERFACE "${binary_dir}/googlemock/gtest/libgtest.a" "${binary_dir}/googlemock/gtest/libgtest_main.a" Threads::Threads)
 target_include_directories(libgtest INTERFACE "${source_dir}/googletest/include" "${source_dir}/googlemock/include")
 
-add_executable(testcore testcore/coremain.cpp testcore/TestTransform.cpp)
+add_executable(testcore testcore/coremain.cpp testcore/TestTransform.cpp common/printHelper.h)
 target_link_libraries(testcore PUBLIC libgtest core)
